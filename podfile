@@ -1,0 +1,9 @@
+platform :ios, ’12.0’
+target 'StreamingX_Objective-C' do
+pod "SocketRocket"
+pod 'Protobuf','3.6.1'
+pod 'MJExtension'
+pod 'SDWebImage'
+pod 'AgoraRtcEngine_iOS'
+pod 'IQKeyboardManager'
+end

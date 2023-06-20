@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LookUpImagesViewController">
+            <connections>
+                <outlet property="pageLabel" destination="9ys-C8-Lb6" id="9h4-jC-dUS"/>
+                <outlet property="scrollView" destination="mCh-fN-Wbz" id="L5f-1V-TKr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCh-fN-Wbz">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ys-C8-Lb6">
+                    <rect key="frame" x="182.5" y="746" width="49" height="36"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3x-uF-iCe">
+                    <rect key="frame" x="20" y="44" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Pvh-9a-lIY"/>
+                        <constraint firstAttribute="width" constant="44" id="j9y-L3-sQZ"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="chevron.backward" catalog="system"/>
+                    <connections>
+                        <action selector="backButtonAction:" destination="-1" eventType="touchUpInside" id="NZR-uW-wux"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="mCh-fN-Wbz" secondAttribute="bottom" id="6iO-vh-qma"/>
+                <constraint firstItem="mCh-fN-Wbz" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="BPW-mD-cCP"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="9ys-C8-Lb6" secondAttribute="bottom" constant="80" id="WMJ-fP-4I6"/>
+                <constraint firstItem="9ys-C8-Lb6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ypg-ZD-V2w"/>
+                <constraint firstItem="mCh-fN-Wbz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aXx-2h-tWI"/>
+                <constraint firstItem="N3x-uF-iCe" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="ein-Xm-njp"/>
+                <constraint firstItem="mCh-fN-Wbz" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="jMf-YM-Tsq"/>
+                <constraint firstItem="N3x-uF-iCe" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="tQZ-cP-5hV"/>
+            </constraints>
+            <point key="canvasLocation" x="140.57971014492756" y="116.51785714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+    </resources>
+</document>

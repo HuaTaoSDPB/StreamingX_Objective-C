@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		349597E95DEDEB9E3E868366 /* libPods-StreamingX_Objective-C.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE9C945B3DBD786546FDBD0 /* libPods-StreamingX_Objective-C.a */; };
 		603A2D1B2A4153370037049A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D1A2A4153370037049A /* AppDelegate.m */; };
 		603A2D1E2A4153370037049A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D1D2A4153370037049A /* SceneDelegate.m */; };
 		603A2D212A4153370037049A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D202A4153370037049A /* ViewController.m */; };
@@ -14,7 +15,30 @@
 		603A2D262A4153370037049A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 603A2D252A4153370037049A /* Assets.xcassets */; };
 		603A2D292A4153370037049A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 603A2D272A4153370037049A /* LaunchScreen.storyboard */; };
 		603A2D2C2A4153370037049A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D2B2A4153370037049A /* main.m */; };
-		603A2D352A4153510037049A /* StreamingXManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D342A4153510037049A /* StreamingXManager.m */; };
+		603A2D352A4153510037049A /* StreamingXRtcManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D342A4153510037049A /* StreamingXRtcManager.m */; };
+		603A2D5D2A4175910037049A /* Base.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D3B2A4175910037049A /* Base.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		603A2D5E2A4175910037049A /* ChannelIm.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D412A4175910037049A /* ChannelIm.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		603A2D5F2A4175910037049A /* ChannelBase.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D422A4175910037049A /* ChannelBase.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		603A2D602A4175910037049A /* Api.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D432A4175910037049A /* Api.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		603A2D612A4175910037049A /* Consts.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D452A4175910037049A /* Consts.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		603A2D622A4175910037049A /* HTTPError.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D462A4175910037049A /* HTTPError.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		603A2D632A4175910037049A /* Code.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D482A4175910037049A /* Code.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		603A2D642A4175910037049A /* ChannelImform.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D492A4175910037049A /* ChannelImform.pbobjc.m */; };
+		603A2D652A4175910037049A /* StreamingXResponse_RefreshTokenResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D4A2A4175910037049A /* StreamingXResponse_RefreshTokenResult.m */; };
+		603A2D662A4175910037049A /* StreamingXResponse_AnchorList.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D4C2A4175910037049A /* StreamingXResponse_AnchorList.m */; };
+		603A2D672A4175910037049A /* StreamingXResponse_JoinChannelResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D4E2A4175910037049A /* StreamingXResponse_JoinChannelResult.m */; };
+		603A2D682A4175910037049A /* StreamingXResponse_AnchorAvatarList.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D4F2A4175910037049A /* StreamingXResponse_AnchorAvatarList.m */; };
+		603A2D692A4175910037049A /* StreamingXRtcTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D512A4175910037049A /* StreamingXRtcTool.m */; };
+		603A2D6A2A4175910037049A /* StreamingXHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D582A4175910037049A /* StreamingXHttpManager.m */; };
+		603A2D6B2A4175910037049A /* StreamingXAgoraRtcEngineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D5C2A4175910037049A /* StreamingXAgoraRtcEngineManager.m */; };
+		603A2D782A41771F0037049A /* AnchListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D6C2A41771E0037049A /* AnchListTableViewCell.m */; };
+		603A2D792A41771F0037049A /* RtcVideoMsgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D6D2A41771E0037049A /* RtcVideoMsgTableViewCell.m */; };
+		603A2D7A2A41771F0037049A /* AnchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603A2D6F2A41771E0037049A /* AnchListTableViewCell.xib */; };
+		603A2D7B2A41771F0037049A /* LookUpImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D712A41771F0037049A /* LookUpImagesViewController.m */; };
+		603A2D7C2A41771F0037049A /* RtcVideoMsgTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603A2D732A41771F0037049A /* RtcVideoMsgTableViewCell.xib */; };
+		603A2D7D2A41771F0037049A /* RtcVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D742A41771F0037049A /* RtcVideoViewController.m */; };
+		603A2D7E2A41771F0037049A /* RtcVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603A2D752A41771F0037049A /* RtcVideoViewController.xib */; };
+		603A2D7F2A41771F0037049A /* LookUpImagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603A2D762A41771F0037049A /* LookUpImagesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +54,56 @@
 		603A2D282A4153370037049A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		603A2D2A2A4153370037049A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		603A2D2B2A4153370037049A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		603A2D332A4153510037049A /* StreamingXManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreamingXManager.h; sourceTree = "<group>"; };
-		603A2D342A4153510037049A /* StreamingXManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StreamingXManager.m; sourceTree = "<group>"; };
+		603A2D332A4153510037049A /* StreamingXRtcManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreamingXRtcManager.h; sourceTree = "<group>"; };
+		603A2D342A4153510037049A /* StreamingXRtcManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StreamingXRtcManager.m; sourceTree = "<group>"; };
+		603A2D372A4175910037049A /* StreamingXResponse_AnchorList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingXResponse_AnchorList.h; sourceTree = "<group>"; };
+		603A2D382A4175910037049A /* StreamingXResponse_AnchorAvatarList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingXResponse_AnchorAvatarList.h; sourceTree = "<group>"; };
+		603A2D3A2A4175910037049A /* Consts.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.pbobjc.h; sourceTree = "<group>"; };
+		603A2D3B2A4175910037049A /* Base.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base.pbobjc.m; sourceTree = "<group>"; };
+		603A2D3C2A4175910037049A /* Api.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.pbobjc.h; sourceTree = "<group>"; };
+		603A2D3D2A4175910037049A /* ChannelBase.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelBase.pbobjc.h; sourceTree = "<group>"; };
+		603A2D3E2A4175910037049A /* HTTPError.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPError.pbobjc.h; sourceTree = "<group>"; };
+		603A2D3F2A4175910037049A /* ChannelImform.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelImform.pbobjc.h; sourceTree = "<group>"; };
+		603A2D402A4175910037049A /* Code.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.pbobjc.h; sourceTree = "<group>"; };
+		603A2D412A4175910037049A /* ChannelIm.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelIm.pbobjc.m; sourceTree = "<group>"; };
+		603A2D422A4175910037049A /* ChannelBase.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelBase.pbobjc.m; sourceTree = "<group>"; };
+		603A2D432A4175910037049A /* Api.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Api.pbobjc.m; sourceTree = "<group>"; };
+		603A2D442A4175910037049A /* Base.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base.pbobjc.h; sourceTree = "<group>"; };
+		603A2D452A4175910037049A /* Consts.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consts.pbobjc.m; sourceTree = "<group>"; };
+		603A2D462A4175910037049A /* HTTPError.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPError.pbobjc.m; sourceTree = "<group>"; };
+		603A2D472A4175910037049A /* ChannelIm.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelIm.pbobjc.h; sourceTree = "<group>"; };
+		603A2D482A4175910037049A /* Code.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Code.pbobjc.m; sourceTree = "<group>"; };
+		603A2D492A4175910037049A /* ChannelImform.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelImform.pbobjc.m; sourceTree = "<group>"; };
+		603A2D4A2A4175910037049A /* StreamingXResponse_RefreshTokenResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingXResponse_RefreshTokenResult.m; sourceTree = "<group>"; };
+		603A2D4B2A4175910037049A /* StreamingXResponse_JoinChannelResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingXResponse_JoinChannelResult.h; sourceTree = "<group>"; };
+		603A2D4C2A4175910037049A /* StreamingXResponse_AnchorList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingXResponse_AnchorList.m; sourceTree = "<group>"; };
+		603A2D4D2A4175910037049A /* StreamingXResponse_RefreshTokenResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingXResponse_RefreshTokenResult.h; sourceTree = "<group>"; };
+		603A2D4E2A4175910037049A /* StreamingXResponse_JoinChannelResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingXResponse_JoinChannelResult.m; sourceTree = "<group>"; };
+		603A2D4F2A4175910037049A /* StreamingXResponse_AnchorAvatarList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingXResponse_AnchorAvatarList.m; sourceTree = "<group>"; };
+		603A2D512A4175910037049A /* StreamingXRtcTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingXRtcTool.m; sourceTree = "<group>"; };
+		603A2D522A4175910037049A /* StreamingXRtcTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingXRtcTool.h; sourceTree = "<group>"; };
+		603A2D542A4175910037049A /* StreamingXModelHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingXModelHeader.h; sourceTree = "<group>"; };
+		603A2D552A4175910037049A /* StreamingXEnumHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingXEnumHeader.h; sourceTree = "<group>"; };
+		603A2D562A4175910037049A /* StreamingXProtobufHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingXProtobufHeader.h; sourceTree = "<group>"; };
+		603A2D582A4175910037049A /* StreamingXHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingXHttpManager.m; sourceTree = "<group>"; };
+		603A2D592A4175910037049A /* StreamingXHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingXHttpManager.h; sourceTree = "<group>"; };
+		603A2D5B2A4175910037049A /* StreamingXAgoraRtcEngineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingXAgoraRtcEngineManager.h; sourceTree = "<group>"; };
+		603A2D5C2A4175910037049A /* StreamingXAgoraRtcEngineManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingXAgoraRtcEngineManager.m; sourceTree = "<group>"; };
+		603A2D6C2A41771E0037049A /* AnchListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnchListTableViewCell.m; sourceTree = "<group>"; };
+		603A2D6D2A41771E0037049A /* RtcVideoMsgTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RtcVideoMsgTableViewCell.m; sourceTree = "<group>"; };
+		603A2D6E2A41771E0037049A /* AnchListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchListTableViewCell.h; sourceTree = "<group>"; };
+		603A2D6F2A41771E0037049A /* AnchListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnchListTableViewCell.xib; sourceTree = "<group>"; };
+		603A2D702A41771E0037049A /* LookUpImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookUpImagesViewController.h; sourceTree = "<group>"; };
+		603A2D712A41771F0037049A /* LookUpImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookUpImagesViewController.m; sourceTree = "<group>"; };
+		603A2D722A41771F0037049A /* RtcVideoMsgTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtcVideoMsgTableViewCell.h; sourceTree = "<group>"; };
+		603A2D732A41771F0037049A /* RtcVideoMsgTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RtcVideoMsgTableViewCell.xib; sourceTree = "<group>"; };
+		603A2D742A41771F0037049A /* RtcVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RtcVideoViewController.m; sourceTree = "<group>"; };
+		603A2D752A41771F0037049A /* RtcVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RtcVideoViewController.xib; sourceTree = "<group>"; };
+		603A2D762A41771F0037049A /* LookUpImagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LookUpImagesViewController.xib; sourceTree = "<group>"; };
+		603A2D772A41771F0037049A /* RtcVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtcVideoViewController.h; sourceTree = "<group>"; };
+		79E552C1BFA40B2FBA3F5A41 /* Pods-StreamingX_Objective-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingX_Objective-C.release.xcconfig"; path = "Target Support Files/Pods-StreamingX_Objective-C/Pods-StreamingX_Objective-C.release.xcconfig"; sourceTree = "<group>"; };
+		BAE9C945B3DBD786546FDBD0 /* libPods-StreamingX_Objective-C.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StreamingX_Objective-C.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D86155A060D806452328EA /* Pods-StreamingX_Objective-C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingX_Objective-C.debug.xcconfig"; path = "Target Support Files/Pods-StreamingX_Objective-C/Pods-StreamingX_Objective-C.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,18 +111,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				349597E95DEDEB9E3E868366 /* libPods-StreamingX_Objective-C.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		416A1F162B9D94131918DF2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAE9C945B3DBD786546FDBD0 /* libPods-StreamingX_Objective-C.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5DCA187F307F721F6083BADA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D8D86155A060D806452328EA /* Pods-StreamingX_Objective-C.debug.xcconfig */,
+				79E552C1BFA40B2FBA3F5A41 /* Pods-StreamingX_Objective-C.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		603A2D0D2A4153370037049A = {
 			isa = PBXGroup;
 			children = (
 				603A2D322A4153410037049A /* Classes */,
 				603A2D182A4153370037049A /* StreamingX_Objective-C */,
 				603A2D172A4153370037049A /* Products */,
+				5DCA187F307F721F6083BADA /* Pods */,
+				416A1F162B9D94131918DF2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +163,18 @@
 				603A2D1D2A4153370037049A /* SceneDelegate.m */,
 				603A2D1F2A4153370037049A /* ViewController.h */,
 				603A2D202A4153370037049A /* ViewController.m */,
+				603A2D6E2A41771E0037049A /* AnchListTableViewCell.h */,
+				603A2D6C2A41771E0037049A /* AnchListTableViewCell.m */,
+				603A2D6F2A41771E0037049A /* AnchListTableViewCell.xib */,
+				603A2D702A41771E0037049A /* LookUpImagesViewController.h */,
+				603A2D712A41771F0037049A /* LookUpImagesViewController.m */,
+				603A2D762A41771F0037049A /* LookUpImagesViewController.xib */,
+				603A2D722A41771F0037049A /* RtcVideoMsgTableViewCell.h */,
+				603A2D6D2A41771E0037049A /* RtcVideoMsgTableViewCell.m */,
+				603A2D732A41771F0037049A /* RtcVideoMsgTableViewCell.xib */,
+				603A2D772A41771F0037049A /* RtcVideoViewController.h */,
+				603A2D742A41771F0037049A /* RtcVideoViewController.m */,
+				603A2D752A41771F0037049A /* RtcVideoViewController.xib */,
 				603A2D222A4153370037049A /* Main.storyboard */,
 				603A2D252A4153370037049A /* Assets.xcassets */,
 				603A2D272A4153370037049A /* LaunchScreen.storyboard */,
@@ -83,10 +187,91 @@
 		603A2D322A4153410037049A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				603A2D332A4153510037049A /* StreamingXManager.h */,
-				603A2D342A4153510037049A /* StreamingXManager.m */,
+				603A2D332A4153510037049A /* StreamingXRtcManager.h */,
+				603A2D342A4153510037049A /* StreamingXRtcManager.m */,
+				603A2D532A4175910037049A /* Header */,
+				603A2D572A4175910037049A /* Http */,
+				603A2D362A4175910037049A /* Model */,
+				603A2D5A2A4175910037049A /* StreamingXAgoraRtcEngineManager */,
+				603A2D502A4175910037049A /* StreamingXRtcTool */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		603A2D362A4175910037049A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				603A2D392A4175910037049A /* Proto_OBJC */,
+				603A2D372A4175910037049A /* StreamingXResponse_AnchorList.h */,
+				603A2D4C2A4175910037049A /* StreamingXResponse_AnchorList.m */,
+				603A2D382A4175910037049A /* StreamingXResponse_AnchorAvatarList.h */,
+				603A2D4F2A4175910037049A /* StreamingXResponse_AnchorAvatarList.m */,
+				603A2D4D2A4175910037049A /* StreamingXResponse_RefreshTokenResult.h */,
+				603A2D4A2A4175910037049A /* StreamingXResponse_RefreshTokenResult.m */,
+				603A2D4B2A4175910037049A /* StreamingXResponse_JoinChannelResult.h */,
+				603A2D4E2A4175910037049A /* StreamingXResponse_JoinChannelResult.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		603A2D392A4175910037049A /* Proto_OBJC */ = {
+			isa = PBXGroup;
+			children = (
+				603A2D3C2A4175910037049A /* Api.pbobjc.h */,
+				603A2D432A4175910037049A /* Api.pbobjc.m */,
+				603A2D442A4175910037049A /* Base.pbobjc.h */,
+				603A2D3B2A4175910037049A /* Base.pbobjc.m */,
+				603A2D3A2A4175910037049A /* Consts.pbobjc.h */,
+				603A2D452A4175910037049A /* Consts.pbobjc.m */,
+				603A2D402A4175910037049A /* Code.pbobjc.h */,
+				603A2D482A4175910037049A /* Code.pbobjc.m */,
+				603A2D3D2A4175910037049A /* ChannelBase.pbobjc.h */,
+				603A2D422A4175910037049A /* ChannelBase.pbobjc.m */,
+				603A2D3F2A4175910037049A /* ChannelImform.pbobjc.h */,
+				603A2D492A4175910037049A /* ChannelImform.pbobjc.m */,
+				603A2D472A4175910037049A /* ChannelIm.pbobjc.h */,
+				603A2D412A4175910037049A /* ChannelIm.pbobjc.m */,
+				603A2D3E2A4175910037049A /* HTTPError.pbobjc.h */,
+				603A2D462A4175910037049A /* HTTPError.pbobjc.m */,
+			);
+			path = Proto_OBJC;
+			sourceTree = "<group>";
+		};
+		603A2D502A4175910037049A /* StreamingXRtcTool */ = {
+			isa = PBXGroup;
+			children = (
+				603A2D522A4175910037049A /* StreamingXRtcTool.h */,
+				603A2D512A4175910037049A /* StreamingXRtcTool.m */,
+			);
+			path = StreamingXRtcTool;
+			sourceTree = "<group>";
+		};
+		603A2D532A4175910037049A /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				603A2D542A4175910037049A /* StreamingXModelHeader.h */,
+				603A2D552A4175910037049A /* StreamingXEnumHeader.h */,
+				603A2D562A4175910037049A /* StreamingXProtobufHeader.h */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		603A2D572A4175910037049A /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				603A2D592A4175910037049A /* StreamingXHttpManager.h */,
+				603A2D582A4175910037049A /* StreamingXHttpManager.m */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		603A2D5A2A4175910037049A /* StreamingXAgoraRtcEngineManager */ = {
+			isa = PBXGroup;
+			children = (
+				603A2D5B2A4175910037049A /* StreamingXAgoraRtcEngineManager.h */,
+				603A2D5C2A4175910037049A /* StreamingXAgoraRtcEngineManager.m */,
+			);
+			path = StreamingXAgoraRtcEngineManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,9 +281,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 603A2D2F2A4153370037049A /* Build configuration list for PBXNativeTarget "StreamingX_Objective-C" */;
 			buildPhases = (
+				0337139DA1921475F8ADE6E7 /* [CP] Check Pods Manifest.lock */,
 				603A2D122A4153370037049A /* Sources */,
 				603A2D132A4153370037049A /* Frameworks */,
 				603A2D142A4153370037049A /* Resources */,
+				D0808E775E627A5F9091149D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,24 +333,89 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				603A2D7E2A41771F0037049A /* RtcVideoViewController.xib in Resources */,
 				603A2D292A4153370037049A /* LaunchScreen.storyboard in Resources */,
 				603A2D262A4153370037049A /* Assets.xcassets in Resources */,
 				603A2D242A4153370037049A /* Main.storyboard in Resources */,
+				603A2D7F2A41771F0037049A /* LookUpImagesViewController.xib in Resources */,
+				603A2D7C2A41771F0037049A /* RtcVideoMsgTableViewCell.xib in Resources */,
+				603A2D7A2A41771F0037049A /* AnchListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0337139DA1921475F8ADE6E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StreamingX_Objective-C-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0808E775E627A5F9091149D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StreamingX_Objective-C/Pods-StreamingX_Objective-C-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StreamingX_Objective-C/Pods-StreamingX_Objective-C-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StreamingX_Objective-C/Pods-StreamingX_Objective-C-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		603A2D122A4153370037049A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				603A2D782A41771F0037049A /* AnchListTableViewCell.m in Sources */,
+				603A2D5E2A4175910037049A /* ChannelIm.pbobjc.m in Sources */,
+				603A2D5F2A4175910037049A /* ChannelBase.pbobjc.m in Sources */,
 				603A2D212A4153370037049A /* ViewController.m in Sources */,
+				603A2D692A4175910037049A /* StreamingXRtcTool.m in Sources */,
 				603A2D1B2A4153370037049A /* AppDelegate.m in Sources */,
+				603A2D612A4175910037049A /* Consts.pbobjc.m in Sources */,
+				603A2D6B2A4175910037049A /* StreamingXAgoraRtcEngineManager.m in Sources */,
+				603A2D682A4175910037049A /* StreamingXResponse_AnchorAvatarList.m in Sources */,
+				603A2D632A4175910037049A /* Code.pbobjc.m in Sources */,
 				603A2D2C2A4153370037049A /* main.m in Sources */,
-				603A2D352A4153510037049A /* StreamingXManager.m in Sources */,
+				603A2D622A4175910037049A /* HTTPError.pbobjc.m in Sources */,
+				603A2D5D2A4175910037049A /* Base.pbobjc.m in Sources */,
+				603A2D672A4175910037049A /* StreamingXResponse_JoinChannelResult.m in Sources */,
+				603A2D7B2A41771F0037049A /* LookUpImagesViewController.m in Sources */,
+				603A2D6A2A4175910037049A /* StreamingXHttpManager.m in Sources */,
+				603A2D642A4175910037049A /* ChannelImform.pbobjc.m in Sources */,
+				603A2D352A4153510037049A /* StreamingXRtcManager.m in Sources */,
+				603A2D7D2A41771F0037049A /* RtcVideoViewController.m in Sources */,
+				603A2D792A41771F0037049A /* RtcVideoMsgTableViewCell.m in Sources */,
+				603A2D652A4175910037049A /* StreamingXResponse_RefreshTokenResult.m in Sources */,
+				603A2D602A4175910037049A /* Api.pbobjc.m in Sources */,
 				603A2D1E2A4153370037049A /* SceneDelegate.m in Sources */,
+				603A2D662A4175910037049A /* StreamingXResponse_AnchorList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,12 +553,14 @@
 		};
 		603A2D302A4153370037049A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8D86155A060D806452328EA /* Pods-StreamingX_Objective-C.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 66RXMF6R9Q;
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "StreamingX_Objective-C/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -314,6 +568,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,12 +583,14 @@
 		};
 		603A2D312A4153370037049A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79E552C1BFA40B2FBA3F5A41 /* Pods-StreamingX_Objective-C.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 66RXMF6R9Q;
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "StreamingX_Objective-C/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -341,6 +598,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
