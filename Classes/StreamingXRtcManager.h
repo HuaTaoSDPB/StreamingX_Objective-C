@@ -20,11 +20,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// 初始化StreamingXRtcManager结果回调
 @property (nonatomic, copy) void (^streamingXRtcManagerInitResultBlock)(BOOL isSuccess, NSError * _Nullable error);
 /// 收到rtc房间消息
-@property (nonatomic, copy) void (^streamingXRtcManagerReceiveMessageBlock)(rcvChannelMsgRecord * receivedMsg);
-/// 收到房间状态变更消息
-@property (nonatomic, copy) void (^streamingXRtcManagerReceiveChannelStateChangedBlock)(channelStateChange * stateChangeModel);
-/// 收到用户状态变更消息
-@property (nonatomic, copy) void (^streamingXRtcManagerReceiveUserStateChangedBlock)(channelUserStateChange * stateChangeModel);
+@property (nonatomic, copy) void (^streamingXRtcManagerReceiveMessageBlock)(rcvChannelMsgRecord *receivedMsg);
+/// 收到房间状态变更消息 1.被系统提出房间 2.其他错误
+@property (nonatomic, copy) void (^streamingXRtcManagerReceiveChannelStateChangedBlock)(channelStateChange *stateChangeModel);
+/// 收到用户状态变更消息 1.房间正常停止 2.系统关闭房间 3.其他错误
+@property (nonatomic, copy) void (^streamingXRtcManagerReceiveUserStateChangedBlock)(channelUserStateChange *stateChangeModel);
+/// 离线通知
+@property (nonatomic, copy) void (^streamingXRtcManagerReceiveOfflineBlock)(NSInteger uid, AgoraUserOfflineReason reason);
+/// 是否打印日志，默认为FALSE
+@property (nonatomic, assign) BOOL streamingXIsLog;
+/// 日志信息 streamingXIsLog 为 TRUE 时，会调用(由于sdk比较简单，且为了减少本地储存空间占用，日志不会存储，如果需要，请自行存储)
+@property (nonatomic, copy) void (^streamingXRtcManagerReceiveLogMsgBlock)(NSString *log,NSError * _Nullable error);
 
 /// 初始化-每次更新秘钥，需要重新初始化一次，每次初始化都会断开链接重连，请慎重调用
 /// @param access_key_secret 秘钥
@@ -65,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
                                        block:(void(^)(StreamingXResponse_RefreshTokenResult * responseModel))block
                                   errorBlock:(void(^)(NSError * error))errorBlock;
 
-/// 获取当前rtc房间消息列表
+/// 获取当前rtc房间消息列表(目前无用)
 /// @param channelId 频道ID
 /// @param msgId 最近一条消息id 不传就是获取所有消息
 /// @param block 成功回调

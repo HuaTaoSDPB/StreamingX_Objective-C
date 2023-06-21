@@ -76,8 +76,26 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
 #pragma mark - 声网相关处理
 
 - (void)streamingXAddAgorartcNotification {
+    __weak typeof(self) weakSelf = self;
     [self.agorartcManager setStreamingXAgoraRtcEngineOfflineBlock:^(NSInteger uid, AgoraUserOfflineReason reason) {
-        
+        //离线处理
+        weakSelf.streamingXChannelId = nil;
+        [weakSelf.agorartcManager streamingX_leaveRtcChannel:^(AgoraChannelStats * _Nonnull stat) {
+        }];
+        if (weakSelf.streamingXIsLog) {
+            NSLog(@"StreamingX log : 收到离线通知 reason = %@",@(reason));
+            if (weakSelf.streamingXRtcManagerReceiveLogMsgBlock) {
+                weakSelf.streamingXRtcManagerReceiveLogMsgBlock([NSString stringWithFormat:@"StreamingX log : 收到离线通知 reason = %@",@(reason)], nil);
+            }
+        }
+        if (weakSelf.streamingXRtcManagerReceiveOfflineBlock) {
+            weakSelf.streamingXRtcManagerReceiveOfflineBlock(uid, reason);
+        }
+    }];
+    [self.agorartcManager setStreamingXAgoraRtcEngineTokenRefreshBlock:^(NSString * _Nonnull log, NSError * _Nullable error) {
+        if (weakSelf.streamingXRtcManagerReceiveLogMsgBlock) {
+            weakSelf.streamingXRtcManagerReceiveLogMsgBlock(log, error);
+        }
     }];
 }
 
@@ -115,7 +133,12 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
-    NSLog(@"StreamingX log : Websocket Failed With Error %@", error);
+    if (self.streamingXIsLog) {
+        NSLog(@"StreamingX log : Websocket Failed With Error %@", error);
+        if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+            self.streamingXRtcManagerReceiveLogMsgBlock(@"StreamingX log : Websocket Failed With Error", error);
+        }
+    }
     self.streamingXIsConnectSuccess = NO;
     if (self.streamingXRtcManagerInitResultBlock) {
         self.streamingXRtcManagerInitResultBlock(NO, error);
@@ -130,7 +153,12 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {
-    NSLog(@"StreamingX log : WebSocket closed code:%@ reason:%@",@(code),reason);
+    if (self.streamingXIsLog) {
+        NSLog(@"StreamingX log : WebSocket closed code:%@ reason:%@", @(code),reason);
+        if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+            self.streamingXRtcManagerReceiveLogMsgBlock([NSString stringWithFormat:@"StreamingX log : WebSocket closed code:%@ reason:%@",@(code),reason], nil);
+        }
+    }
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceivePong:(NSData *)pongPayload {
@@ -146,7 +174,12 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
     msgModel.data_p = pingModel.data;
     [self.streamingXWebSocket sendPing:msgModel.data error:nil];
     [self.streamingXWebSocket sendData:msgModel.data error:nil];
-    NSLog(@"StreamingX log : send ping");
+    if (self.streamingXIsLog) {
+        NSLog(@"StreamingX log : send ping");
+        if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+            self.streamingXRtcManagerReceiveLogMsgBlock(@"StreamingX log : send ping", nil);
+        }
+    }
 }
 
 - (void)streamingXSendGetDiffMessageRecordWithChannelId:(NSString *)channelId
@@ -158,7 +191,12 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
     msgModel.crc32 = crcGetDiffChannelMsgRecord;
     msgModel.data_p = msgRecord.data;
     [self.streamingXWebSocket sendData:msgModel.data error:nil];
-    NSLog(@"StreamingX log : send 获取房间消息列表");
+    if (self.streamingXIsLog) {
+        NSLog(@"StreamingX log : send 获取房间消息列表");
+        if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+            self.streamingXRtcManagerReceiveLogMsgBlock(@"StreamingX log : send 获取房间消息列表", nil);
+        }
+    }
 }
 
 - (void)streamingXSendChannelMessageWithChannelId:(NSString *)channelId
@@ -177,7 +215,12 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
     msgModel.data_p = msgRecord.data;
     [self.streamingXWebSocket sendData:msgModel.data error:nil];
     [self.streamingXSendingMsgDictionary setValue:msgRecord forKey:msgRecord.msgFp];
-    NSLog(@"StreamingX log : send 发送rtc房间消息");
+    if (self.streamingXIsLog) {
+        NSLog(@"StreamingX log : 发送rtc房间消息:%@",content);
+        if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+            self.streamingXRtcManagerReceiveLogMsgBlock([NSString stringWithFormat:@"StreamingX log : 发送rtc房间消息:%@",content], nil);
+        }
+    }
 }
 
 - (void)streamingXDealWithWwsData:(NSData *)wssData {
@@ -185,7 +228,6 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
     switch (receiveData.crc32) {
             //验证失败
         case crcError:
-            NSLog(@"StreamingX log : 秘钥验证失败");
         {
             WssError * model = [WssError parseFromData:receiveData.data_p error:nil];
             if (model.code == 401) {
@@ -193,6 +235,12 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
                 if (self.streamingXRtcManagerInitResultBlock) {
                     NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:401 userInfo:@{NSLocalizedDescriptionKey:model.message,NSLocalizedFailureReasonErrorKey:model.message}];
                     self.streamingXRtcManagerInitResultBlock(NO, error);
+                    if (self.streamingXIsLog) {
+                        NSLog(@"StreamingX log : 秘钥验证失败");
+                        if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+                            self.streamingXRtcManagerReceiveLogMsgBlock(@"StreamingX log : 秘钥验证失败", error);
+                        }
+                    }
                 }
             }else {
                 // to do
@@ -201,11 +249,16 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
             break;
             //心跳回执
         case crcPong:
-            NSLog(@"StreamingX log : received pong");
             if (!self.streamingXIsConnectSuccess) {
                 self.streamingXIsConnectSuccess = YES;
                 if (self.streamingXRtcManagerInitResultBlock) {
                     self.streamingXRtcManagerInitResultBlock(YES, nil);
+                }
+            }
+            if (self.streamingXIsLog) {
+                NSLog(@"StreamingX log : received pong");
+                if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+                    self.streamingXRtcManagerReceiveLogMsgBlock(@"StreamingX log : received pong", nil);
                 }
             }
             break;
@@ -219,7 +272,12 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
                 self.streamingXRtcManagerSendMessageAckBlock(record,model);
             }
             [self.streamingXSendingMsgDictionary removeObjectForKey:model.fp];
-            NSLog(@"StreamingX log : 发送聊天消息回执 %@",model.fp);
+            if (self.streamingXIsLog) {
+                NSLog(@"StreamingX log : 聊天消息发送成功回执 %@",model.fp);
+                if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+                    self.streamingXRtcManagerReceiveLogMsgBlock([NSString stringWithFormat:@"StreamingX log : 聊天消息发送成功回执 %@",model.fp], nil);
+                }
+            }
         }
             break;
             //收到聊天消息
@@ -229,7 +287,12 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
             if (self.streamingXRtcManagerReceiveMessageBlock) {
                 self.streamingXRtcManagerReceiveMessageBlock(model);
             }
-            NSLog(@"StreamingX log : 收到聊天消息 %@",model.msg.msg);
+            if (self.streamingXIsLog) {
+                NSLog(@"StreamingX log : 收到聊天消息 %@",model.msg.msg);
+                if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+                    self.streamingXRtcManagerReceiveLogMsgBlock([NSString stringWithFormat:@"StreamingX log : 收到聊天消息 %@",model.msg.msg], nil);
+                }
+            }
         }
             break;
             //获取频道聊天消息
@@ -239,7 +302,12 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
             if (self.streamingXRtcManagerGetMessageListBlock) {
                 self.streamingXRtcManagerGetMessageListBlock(model);
             }
-            NSLog(@"StreamingX log : 拉取聊天记录成功（从某条消息开始拉取）");
+            if (self.streamingXIsLog) {
+                NSLog(@"StreamingX log : 拉取聊天记录成功（从某条消息开始拉取）");
+                if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+                    self.streamingXRtcManagerReceiveLogMsgBlock(@"StreamingX log : 拉取聊天记录成功（从某条消息开始拉取）", nil);
+                }
+            }
         }
             break;
             //频道状态变更
@@ -249,7 +317,15 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
             if (self.streamingXRtcManagerReceiveChannelStateChangedBlock) {
                 self.streamingXRtcManagerReceiveChannelStateChangedBlock(model);
             }
-            NSLog(@"StreamingX log : 频道状态变更 %@",@(model.ch.state));
+            self.streamingXChannelId = nil;
+            [self.agorartcManager streamingX_leaveRtcChannel:^(AgoraChannelStats * _Nonnull stat) {
+            }];
+            if (self.streamingXIsLog) {
+                NSLog(@"StreamingX log : 频道状态变更 %@",@(model.ch.state));
+                if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+                    self.streamingXRtcManagerReceiveLogMsgBlock([NSString stringWithFormat:@"StreamingX log : 频道状态变更 %@",@(model.ch.state)], nil);
+                }
+            }
         }
             break;
             //频道用户状态变更
@@ -259,7 +335,15 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
             if (self.streamingXRtcManagerReceiveUserStateChangedBlock) {
                 self.streamingXRtcManagerReceiveUserStateChangedBlock(model);
             }
-            NSLog(@"StreamingX log : 用户状态变更 %@",@(model.chu.state));
+            self.streamingXChannelId = nil;
+            [self.agorartcManager streamingX_leaveRtcChannel:^(AgoraChannelStats * _Nonnull stat) {
+            }];
+            if (self.streamingXIsLog) {
+                NSLog(@"StreamingX log : 用户状态变更 %@",@(model.chu.state));
+                if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+                    self.streamingXRtcManagerReceiveLogMsgBlock([NSString stringWithFormat:@"StreamingX log : 用户状态变更 %@",@(model.chu.state)], nil);
+                }
+            }
         }
             break;
         default:

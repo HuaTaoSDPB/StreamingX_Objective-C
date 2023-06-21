@@ -35,9 +35,11 @@
     }];
     [[StreamingXRtcManager shareStreamingXRtcManager] setStreamingXRtcManagerReceiveUserStateChangedBlock:^(channelUserStateChange * _Nonnull stateChangeModel) {
         //用户状态变更
+        
     }];
     [[StreamingXRtcManager shareStreamingXRtcManager] setStreamingXRtcManagerReceiveChannelStateChangedBlock:^(channelStateChange * _Nonnull stateChangeModel) {
         //房间状态变更
+        
     }];
     self.inputTf.delegate = self;
     self.tableView.delegate = self;

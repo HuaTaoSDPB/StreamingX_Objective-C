@@ -41,6 +41,7 @@
     if (self.accessKeyId.length > 0 && self.accessKeySecret.length > 0 && self.sessionToken.length > 0 && self.expiredAt.length > 0) {
         [self addTextToTextView:@"开始初始化sdk..."];
         self.rtcManager = [StreamingXRtcManager initStreamingXRtcManagerWithAccess_key_secret:self.accessKeySecret access_key_id:self.accessKeyId access_key_token:self.sessionToken];
+        self.rtcManager.streamingXIsLog = true;
         __weak typeof(self) weakSelf = self;
         [self.rtcManager setStreamingXRtcManagerInitResultBlock:^(BOOL isSuccess, NSError * _Nullable error) {
             if (isSuccess) {
@@ -50,6 +51,18 @@
             }else {
                 [weakSelf addTextToTextView:@"初始化sdk失败，参数错误！"];
             }
+        }];
+        [self.rtcManager setStreamingXRtcManagerReceiveUserStateChangedBlock:^(channelUserStateChange * _Nonnull stateChangeModel) {
+            //用户状态变更
+            [weakSelf addTextToTextView:[NSString stringWithFormat:@"用户状态变更:%@",@(stateChangeModel.reason)]];
+        }];
+        [self.rtcManager setStreamingXRtcManagerReceiveChannelStateChangedBlock:^(channelStateChange * _Nonnull stateChangeModel) {
+            //房间状态变更
+            [weakSelf addTextToTextView:[NSString stringWithFormat:@"房间状态变更:%@",@(stateChangeModel.reason)]];
+        }];
+        [self.rtcManager setStreamingXRtcManagerReceiveOfflineBlock:^(NSInteger uid, AgoraUserOfflineReason reason) {
+            //离线通知
+            [weakSelf addTextToTextView:[NSString stringWithFormat:@"离线通知:%@ %@",@(uid),@(reason)]];
         }];
     }else {
         [self addTextToTextView:@"初始化sdk失败，请先获取必要的参数！"];
@@ -167,12 +180,6 @@
     } errorBlock:^(NSError * _Nonnull error) {
         [self addTextToTextView:[NSString stringWithFormat:@"获取主播列表失败，errorCode=%@，errorDes=%@",@(error.code),error.description]];
     }];
-}
-
-#pragma mark - 刷新频道token
-
-- (IBAction)refreshChannelToken:(id)sender {
-    
 }
 
 #pragma mark - 添加显示文本

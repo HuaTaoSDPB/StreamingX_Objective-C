@@ -7,9 +7,10 @@
 
 #import "StreamingXAgoraRtcEngineManager.h"
 #define AgoraRtcID @"d204e16e727048b08a1d8e1ae10bb238"
+#import "StreamingXRtcManager.h"
 
 @interface StreamingXAgoraRtcEngineManager () <AgoraRtcEngineDelegate>
-
+@property (nonatomic, copy) NSString *channelId;
 @end
 
 @implementation StreamingXAgoraRtcEngineManager
@@ -46,6 +47,7 @@
 
 /// 加入房间
 - (void)streamingX_joinInChannelWithToken:(NSString* _Nullable)token channelId:(NSString* _Nonnull)channelId uid:(NSUInteger)uid joinSuccess:(void (^_Nullable)(NSString* _Nonnull channel, NSUInteger uid, NSInteger elapsed))joinSuccessBlock {
+    self.channelId = channelId;
     [self.agoraRtcEngineKit joinChannelByToken:token channelId:channelId info:nil uid:uid joinSuccess:joinSuccessBlock];
 }
 
@@ -205,6 +207,23 @@
 }
 
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine tokenPrivilegeWillExpire:(NSString *_Nonnull)token {
+    //token到期提醒，需要刷新token
+    [StreamingXRtcManager streamingX_refreshTokenWithChannelId:self.channelId block:^(StreamingXResponse_RefreshTokenResult * _Nonnull responseModel) {
+        [self.agoraRtcEngineKit renewToken:responseModel.token];
+        if (self.streamingXAgoraRtcEngineTokenRefreshBlock) {
+            self.streamingXAgoraRtcEngineTokenRefreshBlock([NSString stringWithFormat:@"StreamingX log : 刷新房间token成功 token %@",responseModel.token], nil);
+        }
+        if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsLog) {
+            NSLog(@"StreamingX log : 刷新房间token成功 token %@", responseModel.token);
+        }
+    } errorBlock:^(NSError * _Nonnull error) {
+        if (self.streamingXAgoraRtcEngineTokenRefreshBlock) {
+            self.streamingXAgoraRtcEngineTokenRefreshBlock([NSString stringWithFormat:@"StreamingX log : 刷新房间失败"], error);
+        }
+        if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsLog) {
+            NSLog(@"StreamingX log : 刷新房间token失败 Error %@，请联系管理员", error);
+        }
+    }];
     if (self.delegate && [self.delegate respondsToSelector:@selector(streamingX_rtcEngine:tokenPrivilegeWillExpire:)]) {
         [self.delegate streamingX_rtcEngine:engine tokenPrivilegeWillExpire:token];
     }

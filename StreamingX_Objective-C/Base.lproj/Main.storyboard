@@ -25,14 +25,6 @@
                                     <action selector="initManagerSdk:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cTo-AM-qZK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKK-0I-UuT">
-                                <rect key="frame" x="20" y="115" width="120" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="刷新频道Token"/>
-                                <connections>
-                                    <action selector="refreshChannelToken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Pa-zJ-vfP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJ1-go-2Oi">
                                 <rect key="frame" x="20" y="64" width="91.5" height="31"/>
                                 <state key="normal" title="Button"/>
@@ -65,7 +57,7 @@
                                 <color key="sectionIndexBackgroundColor" systemColor="systemGray4Color"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7D0-RG-FxT">
-                                <rect key="frame" x="160" y="115" width="227" height="31"/>
+                                <rect key="frame" x="20" y="115" width="227" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="刷新Token（相当于获取token）"/>
                                 <connections>
@@ -78,24 +70,22 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EA9-Qy-nAg" secondAttribute="trailing" constant="20" id="1g1-dN-VJp"/>
                             <constraint firstItem="RlT-Xe-6Mj" firstAttribute="top" secondItem="EA9-Qy-nAg" secondAttribute="bottom" constant="20" id="3bl-Ed-LFU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YKK-0I-UuT" secondAttribute="trailing" symbolic="YES" id="59l-8z-N0G"/>
                             <constraint firstItem="kJ1-go-2Oi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="6da-rC-oKe"/>
                             <constraint firstItem="Z2O-pc-ub5" firstAttribute="leading" secondItem="kJ1-go-2Oi" secondAttribute="trailing" constant="20" id="AZr-xB-5JV"/>
+                            <constraint firstItem="7D0-RG-FxT" firstAttribute="top" secondItem="Z2O-pc-ub5" secondAttribute="bottom" constant="20" id="F4O-Gq-U1R"/>
                             <constraint firstItem="kJ1-go-2Oi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FMh-mC-exZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RlT-Xe-6Mj" secondAttribute="bottom" constant="20" id="HYh-lY-D1M"/>
-                            <constraint firstItem="7D0-RG-FxT" firstAttribute="top" secondItem="YKK-0I-UuT" secondAttribute="top" id="Ngh-mW-73k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RlT-Xe-6Mj" secondAttribute="trailing" constant="20" id="PQi-6N-arz"/>
                             <constraint firstItem="78v-9c-1Hi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Z2O-pc-ub5" secondAttribute="trailing" constant="8" symbolic="YES" id="Qpk-iS-YEV"/>
                             <constraint firstItem="78v-9c-1Hi" firstAttribute="centerY" secondItem="Z2O-pc-ub5" secondAttribute="centerY" id="R8j-Vc-Q6f"/>
-                            <constraint firstItem="EA9-Qy-nAg" firstAttribute="top" secondItem="YKK-0I-UuT" secondAttribute="bottom" constant="20" id="SOG-ec-8Dj"/>
                             <constraint firstItem="RlT-Xe-6Mj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="feA-5i-PxO"/>
                             <constraint firstItem="EA9-Qy-nAg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gfc-hU-JxX"/>
-                            <constraint firstItem="YKK-0I-UuT" firstAttribute="top" secondItem="kJ1-go-2Oi" secondAttribute="bottom" constant="20" id="jyd-8I-9dP"/>
+                            <constraint firstItem="EA9-Qy-nAg" firstAttribute="top" secondItem="7D0-RG-FxT" secondAttribute="bottom" constant="20" id="hX0-sc-lzR"/>
+                            <constraint firstItem="7D0-RG-FxT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="icd-JG-9xC"/>
                             <constraint firstItem="Z2O-pc-ub5" firstAttribute="leading" secondItem="kJ1-go-2Oi" secondAttribute="trailing" constant="20" id="kHv-sK-gVI"/>
                             <constraint firstItem="Z2O-pc-ub5" firstAttribute="top" secondItem="kJ1-go-2Oi" secondAttribute="top" id="oAf-ul-zf2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="78v-9c-1Hi" secondAttribute="trailing" constant="57.5" id="pfu-Si-Pc8"/>
-                            <constraint firstItem="YKK-0I-UuT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rS5-Ub-vU7"/>
-                            <constraint firstItem="7D0-RG-FxT" firstAttribute="leading" secondItem="YKK-0I-UuT" secondAttribute="trailing" constant="20" id="u2H-yo-uGt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7D0-RG-FxT" secondAttribute="trailing" symbolic="YES" id="vOf-vj-BpH"/>
                         </constraints>
                     </view>
                     <connections>

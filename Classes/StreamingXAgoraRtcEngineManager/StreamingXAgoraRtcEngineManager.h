@@ -30,15 +30,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface StreamingXAgoraRtcEngineManager : NSObject
 /// 代理
-@property(nonatomic, weak) id<StreamingXAgoraRtcEngineDelegate> _Nullable delegate;
+@property (nonatomic, weak) id<StreamingXAgoraRtcEngineDelegate> _Nullable delegate;
 /// 声网rtc管理
 @property (nonatomic, strong) AgoraRtcEngineKit *agoraRtcEngineKit;
 /// 远端canvas
 @property (nonatomic, strong) AgoraRtcVideoCanvas *remoteAgoraRtcVideoCanvas;
 /// 本地canvas
 @property (nonatomic, strong) AgoraRtcVideoCanvas *localAgoraRtcVideoCanvas;
-/// 主播掉线，被踢出房间等信息回调
+/// 主播掉线等信息回调
 @property (nonatomic, copy) void (^streamingXAgoraRtcEngineOfflineBlock)(NSInteger uid,AgoraUserOfflineReason reason);
+/// 房间token过期刷新结果
+@property (nonatomic, copy) void (^streamingXAgoraRtcEngineTokenRefreshBlock)(NSString *log,NSError * _Nullable error);
 /// 单例初始化
 + (StreamingXAgoraRtcEngineManager *)shareStreamingXRtcManager;
 /// 加入房间-不要直接调用，请使用StreamingXRtcManager调用
