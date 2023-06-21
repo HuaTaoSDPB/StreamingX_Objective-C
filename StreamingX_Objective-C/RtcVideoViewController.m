@@ -27,6 +27,8 @@
     [[StreamingXRtcManager shareStreamingXRtcManager].agorartcManager streamingX_updateLocalView:self.localView];
     [StreamingXRtcManager streamingX_joinInChannelWithToken:self.token channelId:self.channelId uid:self.uid joinSuccess:^(NSString * _Nonnull channel, NSUInteger uid, NSInteger elapsed) {
         //成功之后开始计时
+    } errorBlock:^(NSError * _Nonnull error) {
+        
     }];
     [[StreamingXRtcManager shareStreamingXRtcManager] setStreamingXRtcManagerReceiveMessageBlock:^(rcvChannelMsgRecord * _Nonnull receivedMsg) {
         [self.msgArray addObject:receivedMsg.msg];

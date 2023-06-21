@@ -100,7 +100,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param channelId 房间id
 /// @param uid 用户id
 /// @param joinSuccessBlock 回调
-+ (void)streamingX_joinInChannelWithToken:(NSString* _Nullable)token channelId:(NSString* _Nonnull)channelId uid:(NSUInteger)uid joinSuccess:(void (^_Nullable)(NSString* _Nonnull channel, NSUInteger uid, NSInteger elapsed))joinSuccessBlock;
+/// @param errorBlock 失败回调
++ (void)streamingX_joinInChannelWithToken:(NSString* _Nullable)token channelId:(NSString* _Nonnull)channelId uid:(NSUInteger)uid joinSuccess:(void (^_Nullable)(NSString* _Nonnull channel, NSUInteger uid, NSInteger elapsed))joinSuccessBlock errorBlock:(void(^)(NSError * error))errorBlock;
 
 /// 离开房间
 /// @param leaveChannelBlock 回调

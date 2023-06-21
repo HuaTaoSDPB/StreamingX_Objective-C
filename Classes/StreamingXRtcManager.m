@@ -364,7 +364,18 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
                                     limit:(NSInteger)limit
                                    block:(void(^)(StreamingXResponse_AnchorList * responseModel))block
                               errorBlock:(void(^)(NSError * error))errorBlock {
-    [StreamingXHttpManager streamingX_getAnchorListWithSort:sort page:page limit:limit block:block errorBlock:errorBlock httpHeader:[StreamingXRtcTool streamingX_getEncodeHeaderWithAccess_key_secret:[StreamingXRtcManager shareStreamingXRtcManager].access_key_secret access_key_id:[StreamingXRtcManager shareStreamingXRtcManager].access_key_id access_key_token:[StreamingXRtcManager shareStreamingXRtcManager].access_key_token]];
+    if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsConnectSuccess) {
+        [StreamingXHttpManager streamingX_getAnchorListWithSort:sort page:page limit:limit block:block errorBlock:errorBlock httpHeader:[StreamingXRtcTool streamingX_getEncodeHeaderWithAccess_key_secret:[StreamingXRtcManager shareStreamingXRtcManager].access_key_secret access_key_id:[StreamingXRtcManager shareStreamingXRtcManager].access_key_id access_key_token:[StreamingXRtcManager shareStreamingXRtcManager].access_key_token]];
+    }else {
+        NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:400 userInfo:@{NSLocalizedDescriptionKey:@"请初始化成功后再调用",NSLocalizedFailureReasonErrorKey:@"请初始化成功后再调用"}];
+        errorBlock(error);
+        if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsLog) {
+            NSLog(@"请初始化成功后再调用");
+            if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock) {
+                [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock(@"请初始化成功后再调用", error);
+            }
+        }
+    }
 }
 
 /// 获取主播头像数组
@@ -374,7 +385,18 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
 + (void)streamingX_getAnchorAvatarsWithAnchorId:(NSInteger)anchorId
                                            block:(void(^)(StreamingXResponse_AnchorAvatarList * responseModel))block
                                      errorBlock:(void(^)(NSError * error))errorBlock {
-    [StreamingXHttpManager streamingX_getAnchorAvatarsWithAnchorId:anchorId block:block errorBlock:errorBlock httpHeader:[StreamingXRtcTool streamingX_getEncodeHeaderWithAccess_key_secret:[StreamingXRtcManager shareStreamingXRtcManager].access_key_secret access_key_id:[StreamingXRtcManager shareStreamingXRtcManager].access_key_id access_key_token:[StreamingXRtcManager shareStreamingXRtcManager].access_key_token]];
+    if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsConnectSuccess) {
+        [StreamingXHttpManager streamingX_getAnchorAvatarsWithAnchorId:anchorId block:block errorBlock:errorBlock httpHeader:[StreamingXRtcTool streamingX_getEncodeHeaderWithAccess_key_secret:[StreamingXRtcManager shareStreamingXRtcManager].access_key_secret access_key_id:[StreamingXRtcManager shareStreamingXRtcManager].access_key_id access_key_token:[StreamingXRtcManager shareStreamingXRtcManager].access_key_token]];
+    }else {
+        NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:400 userInfo:@{NSLocalizedDescriptionKey:@"请初始化成功后再调用",NSLocalizedFailureReasonErrorKey:@"请初始化成功后再调用"}];
+        errorBlock(error);
+        if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsLog) {
+            NSLog(@"请初始化成功后再调用");
+            if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock) {
+                [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock(@"请初始化成功后再调用", error);
+            }
+        }
+    }
 }
 
 /// 刷新频道token
@@ -384,7 +406,18 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
 + (void)streamingX_refreshTokenWithChannelId:(NSString *)channelId
                                        block:(void(^)(StreamingXResponse_RefreshTokenResult * responseModel))block
                                   errorBlock:(void(^)(NSError * error))errorBlock {
-    [StreamingXHttpManager streamingX_refreshTokenWithChannelId:channelId block:block errorBlock:errorBlock httpHeader:[StreamingXRtcTool streamingX_getEncodeHeaderWithAccess_key_secret:[StreamingXRtcManager shareStreamingXRtcManager].access_key_secret access_key_id:[StreamingXRtcManager shareStreamingXRtcManager].access_key_id access_key_token:[StreamingXRtcManager shareStreamingXRtcManager].access_key_token]];
+    if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsConnectSuccess) {
+        [StreamingXHttpManager streamingX_refreshTokenWithChannelId:channelId block:block errorBlock:errorBlock httpHeader:[StreamingXRtcTool streamingX_getEncodeHeaderWithAccess_key_secret:[StreamingXRtcManager shareStreamingXRtcManager].access_key_secret access_key_id:[StreamingXRtcManager shareStreamingXRtcManager].access_key_id access_key_token:[StreamingXRtcManager shareStreamingXRtcManager].access_key_token]];
+    }else {
+        NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:400 userInfo:@{NSLocalizedDescriptionKey:@"请初始化成功后再调用",NSLocalizedFailureReasonErrorKey:@"请初始化成功后再调用"}];
+        errorBlock(error);
+        if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsLog) {
+            NSLog(@"请初始化成功后再调用");
+            if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock) {
+                [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock(@"请初始化成功后再调用", error);
+            }
+        }
+    }
 }
 
 /// 获取当前rtc房间消息列表
@@ -396,8 +429,19 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
                                        msgId:(uint32_t)msgId
                                        block:(void(^)(getDiffChannelMsgRecordAck * responseModel))block
                                   errorBlock:(void(^)(NSError * error))errorBlock {
-    [[StreamingXRtcManager shareStreamingXRtcManager] streamingXSendGetDiffMessageRecordWithChannelId:channelId msgId:msgId];
-    [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerGetMessageListBlock = block;
+    if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsConnectSuccess) {
+        [[StreamingXRtcManager shareStreamingXRtcManager] streamingXSendGetDiffMessageRecordWithChannelId:channelId msgId:msgId];
+        [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerGetMessageListBlock = block;
+    }else {
+        NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:400 userInfo:@{NSLocalizedDescriptionKey:@"请初始化成功后再调用",NSLocalizedFailureReasonErrorKey:@"请初始化成功后再调用"}];
+        errorBlock(error);
+        if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsLog) {
+            NSLog(@"请初始化成功后再调用");
+            if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock) {
+                [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock(@"请初始化成功后再调用", error);
+            }
+        }
+    }
 }
 
 /// rtc房间发送消息
@@ -413,8 +457,19 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
                                    lang:(NSString *)lang
                                        block:(void(^)(channelMsgRecord * msg, channelMsgRecordAck * responseModel))block
                              errorBlock:(void(^)(NSError * error))errorBlock {
-    [[StreamingXRtcManager shareStreamingXRtcManager] streamingXSendChannelMessageWithChannelId:channelId uid:uid content:content lang:lang];
-    [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerSendMessageAckBlock = block;
+    if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsConnectSuccess) {
+        [[StreamingXRtcManager shareStreamingXRtcManager] streamingXSendChannelMessageWithChannelId:channelId uid:uid content:content lang:lang];
+        [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerSendMessageAckBlock = block;
+    }else {
+        NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:400 userInfo:@{NSLocalizedDescriptionKey:@"请初始化成功后再调用",NSLocalizedFailureReasonErrorKey:@"请初始化成功后再调用"}];
+        errorBlock(error);
+        if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsLog) {
+            NSLog(@"请初始化成功后再调用");
+            if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock) {
+                [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock(@"请初始化成功后再调用", error);
+            }
+        }
+    }
 }
 
 /// 加入房间
@@ -422,9 +477,20 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
 /// @param channelId 房间id
 /// @param uid 用户id
 /// @param joinSuccessBlock 回调
-+ (void)streamingX_joinInChannelWithToken:(NSString* _Nullable)token channelId:(NSString* _Nonnull)channelId uid:(NSUInteger)uid joinSuccess:(void (^_Nullable)(NSString* _Nonnull channel, NSUInteger uid, NSInteger elapsed))joinSuccessBlock {
-    [StreamingXRtcManager shareStreamingXRtcManager].streamingXChannelId = channelId;
-    [[StreamingXRtcManager shareStreamingXRtcManager].agorartcManager streamingX_joinInChannelWithToken:token channelId:channelId uid:uid joinSuccess:joinSuccessBlock];
++ (void)streamingX_joinInChannelWithToken:(NSString* _Nullable)token channelId:(NSString* _Nonnull)channelId uid:(NSUInteger)uid joinSuccess:(void (^_Nullable)(NSString* _Nonnull channel, NSUInteger uid, NSInteger elapsed))joinSuccessBlock errorBlock:(void(^)(NSError * error))errorBlock {
+    if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsConnectSuccess) {
+        [StreamingXRtcManager shareStreamingXRtcManager].streamingXChannelId = channelId;
+        [[StreamingXRtcManager shareStreamingXRtcManager].agorartcManager streamingX_joinInChannelWithToken:token channelId:channelId uid:uid joinSuccess:joinSuccessBlock];
+    }else {
+        NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:400 userInfo:@{NSLocalizedDescriptionKey:@"请初始化成功后再调用",NSLocalizedFailureReasonErrorKey:@"请初始化成功后再调用"}];
+        errorBlock(error);
+        if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsLog) {
+            NSLog(@"请初始化成功后再调用");
+            if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock) {
+                [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock(@"请初始化成功后再调用", error);
+            }
+        }
+    }
 }
 
 /// 离开房间

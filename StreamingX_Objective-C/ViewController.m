@@ -52,6 +52,7 @@
                 [weakSelf addTextToTextView:@"初始化sdk失败，参数错误！"];
             }
         }];
+        //下面的回调在回调之后会自动退出房间，客户端需要处理退出房间相关UI
         [self.rtcManager setStreamingXRtcManagerReceiveUserStateChangedBlock:^(channelUserStateChange * _Nonnull stateChangeModel) {
             //用户状态变更
             [weakSelf addTextToTextView:[NSString stringWithFormat:@"用户状态变更:%@",@(stateChangeModel.reason)]];
