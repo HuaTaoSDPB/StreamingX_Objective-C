@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "StreamingXHttpManager.h"
+#import "Http/StreamingXHttpManager.h"
 #import "StreamingXAgoraRtcEngineManager.h"
 #import "StreamingXProtobufHeader.h"
 
