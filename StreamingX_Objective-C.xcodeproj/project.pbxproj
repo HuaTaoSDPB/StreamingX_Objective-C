@@ -189,19 +189,15 @@
 			children = (
 				603A2D332A4153510037049A /* StreamingXRtcManager.h */,
 				603A2D342A4153510037049A /* StreamingXRtcManager.m */,
-				603A2D532A4175910037049A /* Header */,
-				603A2D572A4175910037049A /* Http */,
-				603A2D362A4175910037049A /* Model */,
-				603A2D5A2A4175910037049A /* StreamingXAgoraRtcEngineManager */,
-				603A2D502A4175910037049A /* StreamingXRtcTool */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		603A2D362A4175910037049A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				603A2D392A4175910037049A /* Proto_OBJC */,
+				603A2D542A4175910037049A /* StreamingXModelHeader.h */,
+				603A2D552A4175910037049A /* StreamingXEnumHeader.h */,
+				603A2D562A4175910037049A /* StreamingXProtobufHeader.h */,
+				603A2D592A4175910037049A /* StreamingXHttpManager.h */,
+				603A2D582A4175910037049A /* StreamingXHttpManager.m */,
+				603A2D5B2A4175910037049A /* StreamingXAgoraRtcEngineManager.h */,
+				603A2D5C2A4175910037049A /* StreamingXAgoraRtcEngineManager.m */,
+				603A2D522A4175910037049A /* StreamingXRtcTool.h */,
+				603A2D512A4175910037049A /* StreamingXRtcTool.m */,
 				603A2D372A4175910037049A /* StreamingXResponse_AnchorList.h */,
 				603A2D4C2A4175910037049A /* StreamingXResponse_AnchorList.m */,
 				603A2D382A4175910037049A /* StreamingXResponse_AnchorAvatarList.h */,
@@ -210,13 +206,6 @@
 				603A2D4A2A4175910037049A /* StreamingXResponse_RefreshTokenResult.m */,
 				603A2D4B2A4175910037049A /* StreamingXResponse_JoinChannelResult.h */,
 				603A2D4E2A4175910037049A /* StreamingXResponse_JoinChannelResult.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		603A2D392A4175910037049A /* Proto_OBJC */ = {
-			isa = PBXGroup;
-			children = (
 				603A2D3C2A4175910037049A /* Api.pbobjc.h */,
 				603A2D432A4175910037049A /* Api.pbobjc.m */,
 				603A2D442A4175910037049A /* Base.pbobjc.h */,
@@ -234,44 +223,7 @@
 				603A2D3E2A4175910037049A /* HTTPError.pbobjc.h */,
 				603A2D462A4175910037049A /* HTTPError.pbobjc.m */,
 			);
-			path = Proto_OBJC;
-			sourceTree = "<group>";
-		};
-		603A2D502A4175910037049A /* StreamingXRtcTool */ = {
-			isa = PBXGroup;
-			children = (
-				603A2D522A4175910037049A /* StreamingXRtcTool.h */,
-				603A2D512A4175910037049A /* StreamingXRtcTool.m */,
-			);
-			path = StreamingXRtcTool;
-			sourceTree = "<group>";
-		};
-		603A2D532A4175910037049A /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				603A2D542A4175910037049A /* StreamingXModelHeader.h */,
-				603A2D552A4175910037049A /* StreamingXEnumHeader.h */,
-				603A2D562A4175910037049A /* StreamingXProtobufHeader.h */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
-		603A2D572A4175910037049A /* Http */ = {
-			isa = PBXGroup;
-			children = (
-				603A2D592A4175910037049A /* StreamingXHttpManager.h */,
-				603A2D582A4175910037049A /* StreamingXHttpManager.m */,
-			);
-			path = Http;
-			sourceTree = "<group>";
-		};
-		603A2D5A2A4175910037049A /* StreamingXAgoraRtcEngineManager */ = {
-			isa = PBXGroup;
-			children = (
-				603A2D5B2A4175910037049A /* StreamingXAgoraRtcEngineManager.h */,
-				603A2D5C2A4175910037049A /* StreamingXAgoraRtcEngineManager.m */,
-			);
-			path = StreamingXAgoraRtcEngineManager;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,7 +322,7 @@
 		};
 		D0808E775E627A5F9091149D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -380,7 +332,7 @@
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StreamingX_Objective-C/Pods-StreamingX_Objective-C-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StreamingX_Objective-C/Pods-StreamingX_Objective-C-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
