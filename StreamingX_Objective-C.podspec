@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "StreamingX_Objective-C"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "StreamingX for Objective-C."
 
   # This description is used to generate tags and improve search results.
@@ -134,7 +134,7 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   spec.dependency "SocketRocket"
-  spec.dependency "Protobuf", "3.6.1"
+  spec.dependency "Protobuf"
   spec.dependency "MJExtension"
   spec.dependency "AgoraRtcEngine_iOS"
 

@@ -34,17 +34,19 @@
 
 @class GPBCodedInputStream;
 @class GPBCodedOutputStream;
-@class GPBExtensionRegistry;
+@protocol GPBExtensionRegistry;
 @class GPBFieldDescriptor;
 
 @protocol GPBDictionaryInternalsProtocol
 - (size_t)computeSerializedSizeAsField:(GPBFieldDescriptor *)field;
 - (void)writeToCodedOutputStream:(GPBCodedOutputStream *)outputStream
                          asField:(GPBFieldDescriptor *)field;
-- (void)setGPBGenericValue:(GPBGenericValue *)value
-     forGPBGenericValueKey:(GPBGenericValue *)key;
+- (void)setGPBGenericValue:(GPBGenericValue *)value forGPBGenericValueKey:(GPBGenericValue *)key;
 - (void)enumerateForTextFormat:(void (^)(id keyObj, id valueObj))block;
 @end
+
+// Disable clang-format for the macros.
+// clang-format off
 
 //%PDDM-DEFINE DICTIONARY_PRIV_INTERFACES_FOR_POD_KEY(KEY_NAME)
 //%DICTIONARY_POD_PRIV_INTERFACES_FOR_KEY(KEY_NAME)
@@ -451,10 +453,12 @@
 
 //%PDDM-EXPAND-END (6 expansions)
 
+// clang-format on
+
 #pragma mark - NSDictionary Subclass
 
 @interface GPBAutocreatedDictionary : NSMutableDictionary {
-  @package
+ @package
   GPB_UNSAFE_UNRETAINED GPBMessage *_autocreator;
 }
 @end
@@ -465,24 +469,20 @@ CF_EXTERN_C_BEGIN
 
 // Helper to compute size when an NSDictionary is used for the map instead
 // of a custom type.
-size_t GPBDictionaryComputeSizeInternalHelper(NSDictionary *dict,
-                                              GPBFieldDescriptor *field);
+size_t GPBDictionaryComputeSizeInternalHelper(NSDictionary *dict, GPBFieldDescriptor *field);
 
 // Helper to write out when an NSDictionary is used for the map instead
 // of a custom type.
-void GPBDictionaryWriteToStreamInternalHelper(
-    GPBCodedOutputStream *outputStream, NSDictionary *dict,
-    GPBFieldDescriptor *field);
+void GPBDictionaryWriteToStreamInternalHelper(GPBCodedOutputStream *outputStream,
+                                              NSDictionary *dict, GPBFieldDescriptor *field);
 
 // Helper to check message initialization when an NSDictionary is used for
 // the map instead of a custom type.
-BOOL GPBDictionaryIsInitializedInternalHelper(NSDictionary *dict,
-                                              GPBFieldDescriptor *field);
+BOOL GPBDictionaryIsInitializedInternalHelper(NSDictionary *dict, GPBFieldDescriptor *field);
 
 // Helper to read a map instead.
 void GPBDictionaryReadEntry(id mapDictionary, GPBCodedInputStream *stream,
-                            GPBExtensionRegistry *registry,
-                            GPBFieldDescriptor *field,
+                            id<GPBExtensionRegistry> registry, GPBFieldDescriptor *field,
                             GPBMessage *parentMessage);
 
 CF_EXTERN_C_END

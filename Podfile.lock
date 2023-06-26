@@ -1,36 +1,36 @@
 PODS:
-  - AgoraRtcEngine_iOS (4.2.0):
-    - AgoraRtcEngine_iOS/AIAEC (= 4.2.0)
-    - AgoraRtcEngine_iOS/AINS (= 4.2.0)
-    - AgoraRtcEngine_iOS/AudioBeauty (= 4.2.0)
-    - AgoraRtcEngine_iOS/ClearVision (= 4.2.0)
-    - AgoraRtcEngine_iOS/ContentInspect (= 4.2.0)
-    - AgoraRtcEngine_iOS/DRM (= 4.2.0)
-    - AgoraRtcEngine_iOS/FaceDetection (= 4.2.0)
-    - AgoraRtcEngine_iOS/ReplayKit (= 4.2.0)
-    - AgoraRtcEngine_iOS/RtcBasic (= 4.2.0)
-    - AgoraRtcEngine_iOS/SpatialAudio (= 4.2.0)
-    - AgoraRtcEngine_iOS/VideoCodecDec (= 4.2.0)
-    - AgoraRtcEngine_iOS/VideoCodecEnc (= 4.2.0)
-    - AgoraRtcEngine_iOS/VirtualBackground (= 4.2.0)
-    - AgoraRtcEngine_iOS/VQA (= 4.2.0)
-  - AgoraRtcEngine_iOS/AIAEC (4.2.0)
-  - AgoraRtcEngine_iOS/AINS (4.2.0)
-  - AgoraRtcEngine_iOS/AudioBeauty (4.2.0)
-  - AgoraRtcEngine_iOS/ClearVision (4.2.0)
-  - AgoraRtcEngine_iOS/ContentInspect (4.2.0)
-  - AgoraRtcEngine_iOS/DRM (4.2.0)
-  - AgoraRtcEngine_iOS/FaceDetection (4.2.0)
-  - AgoraRtcEngine_iOS/ReplayKit (4.2.0)
-  - AgoraRtcEngine_iOS/RtcBasic (4.2.0)
-  - AgoraRtcEngine_iOS/SpatialAudio (4.2.0)
-  - AgoraRtcEngine_iOS/VideoCodecDec (4.2.0)
-  - AgoraRtcEngine_iOS/VideoCodecEnc (4.2.0)
-  - AgoraRtcEngine_iOS/VirtualBackground (4.2.0)
-  - AgoraRtcEngine_iOS/VQA (4.2.0)
+  - AgoraRtcEngine_iOS (4.2.1):
+    - AgoraRtcEngine_iOS/AIAEC (= 4.2.1)
+    - AgoraRtcEngine_iOS/AINS (= 4.2.1)
+    - AgoraRtcEngine_iOS/AudioBeauty (= 4.2.1)
+    - AgoraRtcEngine_iOS/ClearVision (= 4.2.1)
+    - AgoraRtcEngine_iOS/ContentInspect (= 4.2.1)
+    - AgoraRtcEngine_iOS/DRM (= 4.2.1)
+    - AgoraRtcEngine_iOS/FaceDetection (= 4.2.1)
+    - AgoraRtcEngine_iOS/ReplayKit (= 4.2.1)
+    - AgoraRtcEngine_iOS/RtcBasic (= 4.2.1)
+    - AgoraRtcEngine_iOS/SpatialAudio (= 4.2.1)
+    - AgoraRtcEngine_iOS/VideoCodecDec (= 4.2.1)
+    - AgoraRtcEngine_iOS/VideoCodecEnc (= 4.2.1)
+    - AgoraRtcEngine_iOS/VirtualBackground (= 4.2.1)
+    - AgoraRtcEngine_iOS/VQA (= 4.2.1)
+  - AgoraRtcEngine_iOS/AIAEC (4.2.1)
+  - AgoraRtcEngine_iOS/AINS (4.2.1)
+  - AgoraRtcEngine_iOS/AudioBeauty (4.2.1)
+  - AgoraRtcEngine_iOS/ClearVision (4.2.1)
+  - AgoraRtcEngine_iOS/ContentInspect (4.2.1)
+  - AgoraRtcEngine_iOS/DRM (4.2.1)
+  - AgoraRtcEngine_iOS/FaceDetection (4.2.1)
+  - AgoraRtcEngine_iOS/ReplayKit (4.2.1)
+  - AgoraRtcEngine_iOS/RtcBasic (4.2.1)
+  - AgoraRtcEngine_iOS/SpatialAudio (4.2.1)
+  - AgoraRtcEngine_iOS/VideoCodecDec (4.2.1)
+  - AgoraRtcEngine_iOS/VideoCodecEnc (4.2.1)
+  - AgoraRtcEngine_iOS/VirtualBackground (4.2.1)
+  - AgoraRtcEngine_iOS/VQA (4.2.1)
   - IQKeyboardManager (6.5.12)
   - MJExtension (3.4.1)
-  - Protobuf (3.6.1)
+  - Protobuf (3.23.3)
   - SDWebImage (5.16.0):
     - SDWebImage/Core (= 5.16.0)
   - SDWebImage/Core (5.16.0)
@@ -40,7 +40,7 @@ DEPENDENCIES:
   - AgoraRtcEngine_iOS
   - IQKeyboardManager
   - MJExtension
-  - Protobuf (= 3.6.1)
+  - Protobuf
   - SDWebImage
   - SocketRocket
 
@@ -54,13 +54,13 @@ SPEC REPOS:
     - SocketRocket
 
 SPEC CHECKSUMS:
-  AgoraRtcEngine_iOS: ab13aeb715fc00abc91c4f5c0baab9f05ad79aae
+  AgoraRtcEngine_iOS: bbbacbf4797a6f85532c6023b72c4d66f2b49227
   IQKeyboardManager: b1fd66ccf7a79095bdcc4a2735231586f744216e
   MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
-  Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  Protobuf: d9c3d7e5a3574aa6a5d521f2d9f733c76d294be8
   SDWebImage: 2aea163b50bfcb569a2726b6a754c54a4506fcf6
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
 
-PODFILE CHECKSUM: a0f699209f02771bc32d59262ef759801575ae8b
+PODFILE CHECKSUM: a205ecc094065efe30fa328ff39f6dcd3913476f
 
 COCOAPODS: 1.12.1
