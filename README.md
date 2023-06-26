@@ -1,6 +1,6 @@
 # StreamingX_Objective-C
 <p>
-  <img src="https://img0.baidu.com/it/u=514104145,2953122804&fm=253&fmt=auto&app=138&f=PNG?w=1172&h=438" width="500" alt="Banner" />
+  <img src="https://spark.apache.org/docs/latest/img/streaming-arch.png" width="500" alt="Banner" />
 </p>
 基于声网rtc的私有服务。
 
