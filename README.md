@@ -12,7 +12,7 @@
 
 使用CocoaPods安装：
 ```ruby
-pod 'AFNetworking', '~> 4.0'
+pod 'StreamingX_Objective-C', '~> 1.0.0'
 ```
 
 初始化SDK（请注意秘钥的过期时间，请在过期前重新获取秘钥并初始化SDK）：
