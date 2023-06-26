@@ -55,7 +55,7 @@ GPBEnumDescriptor *channelState_EnumDescriptor(void) {
                               extraTextFormatInfo:extraTextFormatInfo];
     GPBEnumDescriptor *expected = nil;
     if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
-      [worker release];
+//      [worker release];
     }
   }
   return descriptor;
@@ -98,7 +98,7 @@ GPBEnumDescriptor *channelStopReason_EnumDescriptor(void) {
                               extraTextFormatInfo:extraTextFormatInfo];
     GPBEnumDescriptor *expected = nil;
     if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
-      [worker release];
+//      [worker release];
     }
   }
   return descriptor;
@@ -140,7 +140,7 @@ GPBEnumDescriptor *channelUserKickReason_EnumDescriptor(void) {
                               extraTextFormatInfo:extraTextFormatInfo];
     GPBEnumDescriptor *expected = nil;
     if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
-      [worker release];
+//      [worker release];
     }
   }
   return descriptor;
@@ -180,7 +180,7 @@ GPBEnumDescriptor *channelCategory_EnumDescriptor(void) {
                               extraTextFormatInfo:extraTextFormatInfo];
     GPBEnumDescriptor *expected = nil;
     if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
-      [worker release];
+//      [worker release];
     }
   }
   return descriptor;
