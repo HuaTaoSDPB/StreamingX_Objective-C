@@ -151,6 +151,227 @@ typedef struct channelUserStateChange__storage_ {
 
 @end
 
+#pragma mark - channelMatched
+
+@implementation channelMatched
+
+@dynamic hasCh, ch;
+@dynamic token;
+@dynamic selfUniqId;
+@dynamic peerUniqId;
+@dynamic hasMatchedUserAttr, matchedUserAttr;
+@dynamic ts;
+
+typedef struct channelMatched__storage_ {
+  uint32_t _has_storage_[1];
+  channel *ch;
+  NSString *token;
+  NSString *selfUniqId;
+  NSString *peerUniqId;
+  matchAttr *matchedUserAttr;
+  int64_t ts;
+} channelMatched__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "ch",
+        .dataTypeSpecific.className = GPBStringifySymbol(channel),
+        .number = channelMatched_FieldNumber_Ch,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(channelMatched__storage_, ch),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "token",
+        .dataTypeSpecific.className = NULL,
+        .number = channelMatched_FieldNumber_Token,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(channelMatched__storage_, token),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "selfUniqId",
+        .dataTypeSpecific.className = NULL,
+        .number = channelMatched_FieldNumber_SelfUniqId,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(channelMatched__storage_, selfUniqId),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "peerUniqId",
+        .dataTypeSpecific.className = NULL,
+        .number = channelMatched_FieldNumber_PeerUniqId,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(channelMatched__storage_, peerUniqId),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "matchedUserAttr",
+        .dataTypeSpecific.className = GPBStringifySymbol(matchAttr),
+        .number = channelMatched_FieldNumber_MatchedUserAttr,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(channelMatched__storage_, matchedUserAttr),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "ts",
+        .dataTypeSpecific.className = NULL,
+        .number = channelMatched_FieldNumber_Ts,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(channelMatched__storage_, ts),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[channelMatched class]
+                                     rootClass:[ChannelImformRoot class]
+                                          file:ChannelImformRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(channelMatched__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\003\003\n\000\004\n\000\005\017\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - channelSkipped
+
+@implementation channelSkipped
+
+@dynamic channelId;
+
+typedef struct channelSkipped__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *channelId;
+} channelSkipped__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "channelId",
+        .dataTypeSpecific.className = NULL,
+        .number = channelSkipped_FieldNumber_ChannelId,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(channelSkipped__storage_, channelId),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[channelSkipped class]
+                                     rootClass:[ChannelImformRoot class]
+                                          file:ChannelImformRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(channelSkipped__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\001\t\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - matchAttr
+
+@implementation matchAttr
+
+@dynamic name;
+@dynamic photoURL;
+@dynamic gender;
+
+typedef struct matchAttr__storage_ {
+  uint32_t _has_storage_[1];
+  uint32_t gender;
+  NSString *name;
+  NSString *photoURL;
+} matchAttr__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "name",
+        .dataTypeSpecific.className = NULL,
+        .number = matchAttr_FieldNumber_Name,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(matchAttr__storage_, name),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "photoURL",
+        .dataTypeSpecific.className = NULL,
+        .number = matchAttr_FieldNumber_PhotoURL,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(matchAttr__storage_, photoURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "gender",
+        .dataTypeSpecific.className = NULL,
+        .number = matchAttr_FieldNumber_Gender,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(matchAttr__storage_, gender),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeUInt32,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[matchAttr class]
+                                     rootClass:[ChannelImformRoot class]
+                                          file:ChannelImformRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(matchAttr__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\002\006!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 

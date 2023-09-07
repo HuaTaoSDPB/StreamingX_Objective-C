@@ -9,6 +9,8 @@
 #define StreamingX_getAnchorListUrl @"/broadcaster/broadcaster"
 #define StreamingX_getAnchorAvatarsUrl @"/broadcaster/broadcaster/%@/avatar"
 #define StreamingX_refreshTokenUrl @"/channel/channel/%@/token"
+#define StreamingX_requstMatchUrl @"/channel/channel/match"
+#define StreamingX_requstSkipMatchUrl @"/channel/channel/match/skip"
 
 #import "StreamingXHttpManager.h"
 #import <MJExtension/MJExtension.h>
@@ -82,6 +84,37 @@
                                   httpHeader:(NSDictionary *)httpHeader {
     [self streamingX_requestWithType:@"GET" dictionary:nil url:[NSString stringWithFormat:StreamingX_refreshTokenUrl,channelId] httpHeader:httpHeader block:^(NSDictionary *dataDictionary) {
         block(nil);
+    } errorBlock:^(NSError *error) {
+        errorBlock(error);
+    }];
+}
+
+/// 匹配请求
+/// @param dictionaryData 请求体
+/// @param block 成功回调
+/// @param errorBlock 失败回调
+/// @param httpHeader 请求头信息
++ (void)streamingX_matchRequestWithDictionaryData:(NSDictionary *)dictionaryData
+                                            block:(void(^)(void))block
+                                       errorBlock:(void(^)(NSError * error))errorBlock
+                                       httpHeader:(NSDictionary *)httpHeader {
+    [self streamingX_requestWithType:@"POST" dictionary:dictionaryData url:StreamingX_requstMatchUrl httpHeader:httpHeader block:^(NSDictionary *dataDictionary) {
+        block();
+    } errorBlock:^(NSError *error) {
+        errorBlock(error);
+    }];
+}
+
+
+/// 跳过匹配请求
+/// @param block 成功回调
+/// @param errorBlock 失败回调
+/// @param httpHeader 请求头信息
++ (void)streamingX_skipMatchRequestWithBlock:(void(^)(void))block
+                                       errorBlock:(void(^)(NSError * error))errorBlock
+                                  httpHeader:(NSDictionary *)httpHeader {
+    [self streamingX_requestWithType:@"POST" dictionary:nil url:StreamingX_requstMatchUrl httpHeader:httpHeader block:^(NSDictionary *dataDictionary) {
+        block();
     } errorBlock:^(NSError *error) {
         errorBlock(error);
     }];

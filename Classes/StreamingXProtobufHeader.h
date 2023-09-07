@@ -18,6 +18,8 @@
 #define crcChannelStateChange 0xb108048f
 #define crcChannelUserStateChange 0xed6e3161
 #define crcError 0x9c1c9375
+#define crcChannelMatched 0x807c0cc4
+#define crcChannelSkipped 0xdeef91bb
 
 #import "Api.pbobjc.h"
 #import "Base.pbobjc.h"

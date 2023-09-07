@@ -16,6 +16,7 @@
 			dependencies = (
 			);
 			name = AgoraRtcEngine_iOS;
+			productName = AgoraRtcEngine_iOS;
 		};
 /* End PBXAggregateTarget section */
 
@@ -394,12 +395,12 @@
 		0ADFFBE8D6AD4D0F9F6091F8642E57FA /* SDImageHEICCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageHEICCoder.m; path = SDWebImage/Core/SDImageHEICCoder.m; sourceTree = "<group>"; };
 		0B4DCF8798DC529F93899CD38345BD83 /* SRError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRError.h; path = SocketRocket/Internal/Utilities/SRError.h; sourceTree = "<group>"; };
 		0BD51AFF89BBDD3951F604666F750CF0 /* SDMemoryCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDMemoryCache.h; path = SDWebImage/Core/SDMemoryCache.h; sourceTree = "<group>"; };
-		0D1170B2D5CB9CA31F4F5616BFF907E8 /* video_dec.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = video_dec.xcframework; sourceTree = "<group>"; };
+		0D1170B2D5CB9CA31F4F5616BFF907E8 /* video_dec.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = video_dec.xcframework; sourceTree = "<group>"; };
 		0F54458329D04CCE6615858C77DDDF24 /* GPBUnknownFieldSet_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUnknownFieldSet_PackagePrivate.h; path = objectivec/GPBUnknownFieldSet_PackagePrivate.h; sourceTree = "<group>"; };
 		0F6312A64AA122DBC35AC027A6CDF31C /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/Core/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
-		1003766877DA8C0BE43C0302A0564AEA /* video_enc.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = video_enc.xcframework; sourceTree = "<group>"; };
-		1195D6F5A9D559FD685658D550252481 /* AgoraDrmLoaderExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraDrmLoaderExtension.xcframework; sourceTree = "<group>"; };
-		133D7CB9DAA75286445816FD5ECF9985 /* AgoraSoundTouch.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraSoundTouch.xcframework; sourceTree = "<group>"; };
+		1003766877DA8C0BE43C0302A0564AEA /* video_enc.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = video_enc.xcframework; sourceTree = "<group>"; };
+		1195D6F5A9D559FD685658D550252481 /* AgoraDrmLoaderExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraDrmLoaderExtension.xcframework; sourceTree = "<group>"; };
+		133D7CB9DAA75286445816FD5ECF9985 /* AgoraSoundTouch.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraSoundTouch.xcframework; sourceTree = "<group>"; };
 		138968DD4A36B7D4817977FC8ED1CA2B /* SDImageLoadersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageLoadersManager.m; path = SDWebImage/Core/SDImageLoadersManager.m; sourceTree = "<group>"; };
 		1413326C217C606F076F6BDABD35D3A0 /* MJExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MJExtension.release.xcconfig; sourceTree = "<group>"; };
 		14CCC1AE825AD0F9EEE9B4E36CBC9E02 /* IQKeyboardManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManager.h; path = IQKeyboardManager/IQKeyboardManager.h; sourceTree = "<group>"; };
@@ -436,7 +437,7 @@
 		269A37FE4AFBA5551DF775A22D0FCF6A /* GPBUnknownFieldSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUnknownFieldSet.h; path = objectivec/GPBUnknownFieldSet.h; sourceTree = "<group>"; };
 		2822C1A0777F547F39541A4B076D99F3 /* IQToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQToolbar.m; path = IQKeyboardManager/IQToolbar/IQToolbar.m; sourceTree = "<group>"; };
 		284FB117ACFFB3BDFBE1B56BD59B7DE9 /* GPBAny.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBAny.pbobjc.m; path = objectivec/GPBAny.pbobjc.m; sourceTree = "<group>"; };
-		286D48753A77B38A4C5BE2768BC81346 /* AgoraVideoEncoderExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoEncoderExtension.xcframework; sourceTree = "<group>"; };
+		286D48753A77B38A4C5BE2768BC81346 /* AgoraVideoEncoderExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraVideoEncoderExtension.xcframework; sourceTree = "<group>"; };
 		294E0E4C0A1342BB58C06D3936EBD2C7 /* SDImageGraphics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageGraphics.m; path = SDWebImage/Core/SDImageGraphics.m; sourceTree = "<group>"; };
 		295EBAF9BC83CFC9114553905641CEFC /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/Core/UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		29CB58292AAEA23C54F270AD813C4431 /* SDImageCachesManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCachesManager.m; path = SDWebImage/Core/SDImageCachesManager.m; sourceTree = "<group>"; };
@@ -462,14 +463,14 @@
 		3490CC5024C079207F3F768CE2A02F5C /* SDDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDDisplayLink.m; path = SDWebImage/Private/SDDisplayLink.m; sourceTree = "<group>"; };
 		360C22C009D4171513D2858C19CB995C /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/Core/SDWebImageManager.m; sourceTree = "<group>"; };
 		3765DB22AD58B62F206FEC1D7E69B4F7 /* UIImage+Metadata.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Metadata.h"; path = "SDWebImage/Core/UIImage+Metadata.h"; sourceTree = "<group>"; };
-		38B7BC89AF15752F92EBA695072886E3 /* AgoraRtcKit.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraRtcKit.xcframework; sourceTree = "<group>"; };
+		38B7BC89AF15752F92EBA695072886E3 /* AgoraRtcKit.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraRtcKit.xcframework; sourceTree = "<group>"; };
 		3A104939449D9A38E129EBD455475DBF /* UIImage+ForceDecode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ForceDecode.m"; path = "SDWebImage/Core/UIImage+ForceDecode.m"; sourceTree = "<group>"; };
 		3A9AF76C88B9B4965E0A9FAA3A2FFB96 /* Struct.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Struct.pbobjc.h; path = objectivec/google/protobuf/Struct.pbobjc.h; sourceTree = "<group>"; };
 		3C0A9BE03DCE71A1AE03F1634278B489 /* SDImageCacheDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCacheDefine.h; path = SDWebImage/Core/SDImageCacheDefine.h; sourceTree = "<group>"; };
 		3E8DADFEE7CA224374AD781A0A322180 /* UIImage+ExtendedCacheData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ExtendedCacheData.h"; path = "SDWebImage/Core/UIImage+ExtendedCacheData.h"; sourceTree = "<group>"; };
 		3F54C597179F22BE7CA79A6A01B4A1EA /* SRIOConsumer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRIOConsumer.m; path = SocketRocket/Internal/IOConsumer/SRIOConsumer.m; sourceTree = "<group>"; };
 		400B5867C121B6A8A1B504D2161F68C8 /* SDCallbackQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCallbackQueue.h; path = SDWebImage/Core/SDCallbackQueue.h; sourceTree = "<group>"; };
-		4013A3D51A7456DB8FA5A1A9AF5E7CEE /* Agoraffmpeg.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = Agoraffmpeg.xcframework; sourceTree = "<group>"; };
+		4013A3D51A7456DB8FA5A1A9AF5E7CEE /* Agoraffmpeg.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = Agoraffmpeg.xcframework; sourceTree = "<group>"; };
 		412B5D05F7CF6B0C0E8743AB24F2BFDA /* IQKeyboardReturnKeyHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardReturnKeyHandler.h; path = IQKeyboardManager/IQKeyboardReturnKeyHandler.h; sourceTree = "<group>"; };
 		41436794F399B44CE73E74858F9918F4 /* SDWebImageCacheKeyFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCacheKeyFilter.m; path = SDWebImage/Core/SDWebImageCacheKeyFilter.m; sourceTree = "<group>"; };
 		41BE61A0DC1AE8BC31855B6292956821 /* SDImageFramePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageFramePool.h; path = SDWebImage/Private/SDImageFramePool.h; sourceTree = "<group>"; };
@@ -482,9 +483,9 @@
 		48EB8DD9F69F5DD713EB64919FFC089D /* SDmetamacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDmetamacros.h; path = SDWebImage/Private/SDmetamacros.h; sourceTree = "<group>"; };
 		4B8018A87316154A0E17D8D377B46F81 /* MJExtensionConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJExtensionConst.m; path = MJExtension/MJExtensionConst.m; sourceTree = "<group>"; };
 		4BDA5845E0B0E28EEA65A6629D975849 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = SDWebImage/Core/SDWebImageDownloader.h; sourceTree = "<group>"; };
-		4C62790B527B4EEF1E1BC3EFB13ED5FB /* AgoraContentInspectExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraContentInspectExtension.xcframework; sourceTree = "<group>"; };
-		4DD9BF34ED0C320D578FDE44428938B0 /* AgoraSpatialAudioExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraSpatialAudioExtension.xcframework; sourceTree = "<group>"; };
-		4EC4F774C842CBC58363AEE06EE1B42D /* AgoraReplayKitExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraReplayKitExtension.xcframework; sourceTree = "<group>"; };
+		4C62790B527B4EEF1E1BC3EFB13ED5FB /* AgoraContentInspectExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraContentInspectExtension.xcframework; sourceTree = "<group>"; };
+		4DD9BF34ED0C320D578FDE44428938B0 /* AgoraSpatialAudioExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraSpatialAudioExtension.xcframework; sourceTree = "<group>"; };
+		4EC4F774C842CBC58363AEE06EE1B42D /* AgoraReplayKitExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraReplayKitExtension.xcframework; sourceTree = "<group>"; };
 		4EED12DF91FF170089079EF580D98F8A /* FieldMask.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FieldMask.pbobjc.h; path = objectivec/google/protobuf/FieldMask.pbobjc.h; sourceTree = "<group>"; };
 		4F5FBD23EB3F81D23A06F31A3A00B816 /* SDImageIOCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageIOCoder.h; path = SDWebImage/Core/SDImageIOCoder.h; sourceTree = "<group>"; };
 		50399C3E4CBB5872384EB1279B697194 /* MJProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJProperty.h; path = MJExtension/MJProperty.h; sourceTree = "<group>"; };
@@ -507,18 +508,18 @@
 		5E3D96F7CFC21993BEAE903C42061032 /* SDAnimatedImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImage.m; path = SDWebImage/Core/SDAnimatedImage.m; sourceTree = "<group>"; };
 		5F1C632AC0EFF3EDC9860439664963D9 /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQKeyboardReturnKeyHandler.m; path = IQKeyboardManager/IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
 		5F557F1ED63F2FFD222639A85BF8502A /* Type.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Type.pbobjc.h; path = objectivec/google/protobuf/Type.pbobjc.h; sourceTree = "<group>"; };
-		602E693D9F4DF9CA3E28127EE5B557B0 /* Agorafdkaac.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = Agorafdkaac.xcframework; sourceTree = "<group>"; };
+		602E693D9F4DF9CA3E28127EE5B557B0 /* Agorafdkaac.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = Agorafdkaac.xcframework; sourceTree = "<group>"; };
 		60442FD153429076238CDB68396558F4 /* SocketRocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SocketRocket.release.xcconfig; sourceTree = "<group>"; };
 		60F1A8586EAAB2125197ED09BDA07835 /* IQTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQTextView.h; path = IQKeyboardManager/IQTextView/IQTextView.h; sourceTree = "<group>"; };
 		6147D98C3E3DCC36F1F27DAC84D2C12F /* SDInternalMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDInternalMacros.h; path = SDWebImage/Private/SDInternalMacros.h; sourceTree = "<group>"; };
 		6222C4AF458017383364F02D9F1E2258 /* GPBUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBUtilities.m; path = objectivec/GPBUtilities.m; sourceTree = "<group>"; };
 		623E54703EC9D6333466D8EF76379A5D /* SRHTTPConnectMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRHTTPConnectMessage.h; path = SocketRocket/Internal/Utilities/SRHTTPConnectMessage.h; sourceTree = "<group>"; };
 		62F04AEB5C43B9027B8D8FEB4128D81F /* GPBWellKnownTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBWellKnownTypes.h; path = objectivec/GPBWellKnownTypes.h; sourceTree = "<group>"; };
-		63BEEF2807B4A51D8357249407738887 /* AgoraFaceDetectionExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraFaceDetectionExtension.xcframework; sourceTree = "<group>"; };
+		63BEEF2807B4A51D8357249407738887 /* AgoraFaceDetectionExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraFaceDetectionExtension.xcframework; sourceTree = "<group>"; };
 		655E70403CA67D8066694A926BD042CA /* SDWebImageDownloaderDecryptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderDecryptor.h; path = SDWebImage/Core/SDWebImageDownloaderDecryptor.h; sourceTree = "<group>"; };
 		65CBEF0E53AA4FAC9DC2CD2B7963CE31 /* SRIOConsumer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRIOConsumer.h; path = SocketRocket/Internal/IOConsumer/SRIOConsumer.h; sourceTree = "<group>"; };
 		65EE7C582AC4562CDB85B9F0791E06A8 /* GPBDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBDictionary.m; path = objectivec/GPBDictionary.m; sourceTree = "<group>"; };
-		66122B0072C709E29BB34CD1411534EF /* AgoraAudioBeautyExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraAudioBeautyExtension.xcframework; sourceTree = "<group>"; };
+		66122B0072C709E29BB34CD1411534EF /* AgoraAudioBeautyExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraAudioBeautyExtension.xcframework; sourceTree = "<group>"; };
 		665FF7974B758D543760641F854A02BA /* UIColor+SDHexString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SDHexString.m"; path = "SDWebImage/Private/UIColor+SDHexString.m"; sourceTree = "<group>"; };
 		66600A0D0D1289AD5031BFCA6F517ABE /* GPBSourceContext.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBSourceContext.pbobjc.h; path = objectivec/GPBSourceContext.pbobjc.h; sourceTree = "<group>"; };
 		66805A702BE4FE225360F1596AADA81D /* SDWebImageCacheSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCacheSerializer.h; path = SDWebImage/Core/SDWebImageCacheSerializer.h; sourceTree = "<group>"; };
@@ -532,7 +533,7 @@
 		6C12D8552EDEE9AA526823DA759FAA10 /* Pods-StreamingX_Objective-C */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-StreamingX_Objective-C"; path = "libPods-StreamingX_Objective-C.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7AD19BF6AAF30C4F8EA1EEE422B919 /* SDAnimatedImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImageView.h; path = SDWebImage/Core/SDAnimatedImageView.h; sourceTree = "<group>"; };
 		6D7B713BA28965AC73AD9B74177634BB /* Protobuf-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Protobuf-prefix.pch"; sourceTree = "<group>"; };
-		6DF2F1BA785EDD56F88958B4C5B7C803 /* AgoraVideoSegmentationExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoSegmentationExtension.xcframework; sourceTree = "<group>"; };
+		6DF2F1BA785EDD56F88958B4C5B7C803 /* AgoraVideoSegmentationExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraVideoSegmentationExtension.xcframework; sourceTree = "<group>"; };
 		6ED97C4E7B973B61C7D4ED76B3C62295 /* IQTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTextView.m; path = IQKeyboardManager/IQTextView/IQTextView.m; sourceTree = "<group>"; };
 		6F377439C0B8D7D6A465B6E98259AE1D /* SRError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRError.m; path = SocketRocket/Internal/Utilities/SRError.m; sourceTree = "<group>"; };
 		71043EFE7F2B55F6A20F2E1A7AF584F1 /* UIImage+ExtendedCacheData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ExtendedCacheData.m"; path = "SDWebImage/Core/UIImage+ExtendedCacheData.m"; sourceTree = "<group>"; };
@@ -578,7 +579,7 @@
 		85894BBE3D259A8044AF7333B5C76B80 /* SRConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRConstants.m; path = SocketRocket/Internal/SRConstants.m; sourceTree = "<group>"; };
 		85A01882ED06DFEA2E0CE78BCDB204A7 /* SocketRocket */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = SocketRocket; path = libSocketRocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		88767F7E3C2BE0CD67E327357CCE675B /* GPBCodedOutputStream.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBCodedOutputStream.m; path = objectivec/GPBCodedOutputStream.m; sourceTree = "<group>"; };
-		88FBE5ACBAD0E8D466F3FB21A1A3496C /* AgoraVideoDecoderExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoDecoderExtension.xcframework; sourceTree = "<group>"; };
+		88FBE5ACBAD0E8D466F3FB21A1A3496C /* AgoraVideoDecoderExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraVideoDecoderExtension.xcframework; sourceTree = "<group>"; };
 		89B08A56EFF12E467FB752D34302112C /* MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJExtension.h; path = MJExtension/MJExtension.h; sourceTree = "<group>"; };
 		8A668BFE914A6E5B5D7A5FA05A6B715D /* SDImageCachesManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCachesManager.h; path = SDWebImage/Core/SDImageCachesManager.h; sourceTree = "<group>"; };
 		8AA68F7A26FD70E98E2CA2CF84AC23D9 /* SDWebImageIndicator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageIndicator.h; path = SDWebImage/Core/SDWebImageIndicator.h; sourceTree = "<group>"; };
@@ -603,12 +604,12 @@
 		98B73CAF878794C16C2B7F2AAC5E16C5 /* Protobuf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Protobuf.debug.xcconfig; sourceTree = "<group>"; };
 		98CFA75DBB2B01DF5E85CE895C5A75CF /* GPBFieldMask.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBFieldMask.pbobjc.m; path = objectivec/GPBFieldMask.pbobjc.m; sourceTree = "<group>"; };
 		9977765E9E2163F699A47B0FFED7E905 /* SDImageFramePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageFramePool.m; path = SDWebImage/Private/SDImageFramePool.m; sourceTree = "<group>"; };
-		99DB8C0BE63BD739EBA4FBA6DD8D6F95 /* AgoraAiNoiseSuppressionExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraAiNoiseSuppressionExtension.xcframework; sourceTree = "<group>"; };
+		99DB8C0BE63BD739EBA4FBA6DD8D6F95 /* AgoraAiNoiseSuppressionExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraAiNoiseSuppressionExtension.xcframework; sourceTree = "<group>"; };
 		9AD37219C5098083257EFDA68B4DAE21 /* SRRandom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRRandom.h; path = SocketRocket/Internal/Utilities/SRRandom.h; sourceTree = "<group>"; };
 		9B436E9D5D0F8CCE6DB546D44E5B70CD /* SDWebImageCacheSerializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCacheSerializer.m; path = SDWebImage/Core/SDWebImageCacheSerializer.m; sourceTree = "<group>"; };
 		9BA8CFAA0E8FE340093514E70E2A1C01 /* Protobuf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Protobuf.release.xcconfig; sourceTree = "<group>"; };
 		9C8CBA2AA945794D250E07E0D25F3C72 /* SDImageAssetManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageAssetManager.h; path = SDWebImage/Private/SDImageAssetManager.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E1BFCA5A5F83497B7D5E0CB487F3992 /* IQKeyboardManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManager-dummy.m"; sourceTree = "<group>"; };
 		9F1762003CC3B20D7AAFA968C0BC02B6 /* SDWebImageError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageError.m; path = SDWebImage/Core/SDWebImageError.m; sourceTree = "<group>"; };
 		A006D011C9292582288E4ECE267E9129 /* GPBArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBArray.h; path = objectivec/GPBArray.h; sourceTree = "<group>"; };
@@ -644,7 +645,7 @@
 		B70EB7C69E7136BFA0CBC5C54D3ADD2D /* MJExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MJExtension-dummy.m"; sourceTree = "<group>"; };
 		B7FEFB77BCDA968475CE104B533ECB64 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "SDWebImage/Core/UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		B89B7B5BF21B596567465867EEEDBC94 /* SDImageTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageTransformer.m; path = SDWebImage/Core/SDImageTransformer.m; sourceTree = "<group>"; };
-		B903FF90173975349570913F4E9C3128 /* AgoraVideoQualityAnalyzerExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoQualityAnalyzerExtension.xcframework; sourceTree = "<group>"; };
+		B903FF90173975349570913F4E9C3128 /* AgoraVideoQualityAnalyzerExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraVideoQualityAnalyzerExtension.xcframework; sourceTree = "<group>"; };
 		B915820D5C2402A1135E640E026A4615 /* SRHash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRHash.h; path = SocketRocket/Internal/Utilities/SRHash.h; sourceTree = "<group>"; };
 		B9F93BD0FCE0581D8DF85DEC5BBD5D4A /* SDFileAttributeHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDFileAttributeHelper.m; path = SDWebImage/Private/SDFileAttributeHelper.m; sourceTree = "<group>"; };
 		BB3A1F9B1859ED7EB5AA303B66C4E67C /* SDImageLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageLoader.h; path = SDWebImage/Core/SDImageLoader.h; sourceTree = "<group>"; };
@@ -666,14 +667,14 @@
 		C589F155A1813991625D61A0714CED0E /* UIImage+MemoryCacheCost.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MemoryCacheCost.h"; path = "SDWebImage/Core/UIImage+MemoryCacheCost.h"; sourceTree = "<group>"; };
 		C5952A53CD64E8A832116D0E5ACD1387 /* SRWebSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRWebSocket.m; path = SocketRocket/SRWebSocket.m; sourceTree = "<group>"; };
 		C63F8D7828F26F3F7BFBB734728DC098 /* SDWebImageError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageError.h; path = SDWebImage/Core/SDWebImageError.h; sourceTree = "<group>"; };
-		C9FDDC0CFCF3EA5D8BCCF8D021CC9DA5 /* AgoraAiEchoCancellationExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraAiEchoCancellationExtension.xcframework; sourceTree = "<group>"; };
+		C9FDDC0CFCF3EA5D8BCCF8D021CC9DA5 /* AgoraAiEchoCancellationExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraAiEchoCancellationExtension.xcframework; sourceTree = "<group>"; };
 		CA03FC89203710B7DD5CDC9D8300095E /* GPBCodedOutputStream.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBCodedOutputStream.h; path = objectivec/GPBCodedOutputStream.h; sourceTree = "<group>"; };
 		CA1F8165C3437B80B01923A2F4FC22FD /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/Core/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		CA5A72149A9F7B6915BE40D8762B08CA /* GPBRuntimeTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBRuntimeTypes.h; path = objectivec/GPBRuntimeTypes.h; sourceTree = "<group>"; };
 		CB1C9F798319FE23F3AE51F8BB708267 /* SDAnimatedImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImage.h; path = SDWebImage/Core/SDAnimatedImage.h; sourceTree = "<group>"; };
 		CB6985FD177459E6C9BC5F221625770B /* GPBArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBArray.m; path = objectivec/GPBArray.m; sourceTree = "<group>"; };
 		CD111AA71864387784C2961119491618 /* NSImage+Compatibility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSImage+Compatibility.m"; path = "SDWebImage/Core/NSImage+Compatibility.m"; sourceTree = "<group>"; };
-		CDBA0C5ED35B576100F27489AFBA7C42 /* AgoraClearVisionExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraClearVisionExtension.xcframework; sourceTree = "<group>"; };
+		CDBA0C5ED35B576100F27489AFBA7C42 /* AgoraClearVisionExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraClearVisionExtension.xcframework; sourceTree = "<group>"; };
 		CF8365CE2F1E8D4629438E72DE5C3541 /* SDWebImageDownloaderResponseModifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderResponseModifier.m; path = SDWebImage/Core/SDWebImageDownloaderResponseModifier.m; sourceTree = "<group>"; };
 		D15451FC98F88B17BF2221D0D342A165 /* SDImageCacheConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCacheConfig.h; path = SDWebImage/Core/SDImageCacheConfig.h; sourceTree = "<group>"; };
 		D15469DF497509F94459E6737B655F8E /* GPBApi.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBApi.pbobjc.m; path = objectivec/GPBApi.pbobjc.m; sourceTree = "<group>"; };
@@ -711,7 +712,7 @@
 		E81F4961602E7634E991D438797E555E /* SDWeakProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWeakProxy.m; path = SDWebImage/Private/SDWeakProxy.m; sourceTree = "<group>"; };
 		E867CD9F619174CF60D4B824CA00E6E8 /* IQKeyboardManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManager-prefix.pch"; sourceTree = "<group>"; };
 		E8E3DC8065B8F95CF431186BC6B810E6 /* SDImageCoderHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCoderHelper.m; path = SDWebImage/Core/SDImageCoderHelper.m; sourceTree = "<group>"; };
-		EB766D23C3350FA0DCF32C81618ED148 /* AgoraCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraCore.xcframework; sourceTree = "<group>"; };
+		EB766D23C3350FA0DCF32C81618ED148 /* AgoraCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = AgoraCore.xcframework; sourceTree = "<group>"; };
 		EB78D755B75BDEDDF7D6FA90C18658E0 /* SourceContext.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SourceContext.pbobjc.h; path = objectivec/google/protobuf/SourceContext.pbobjc.h; sourceTree = "<group>"; };
 		EC053A346DF180A83D66C6D2A4C5EDB1 /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/Core/SDWebImageCompat.m; sourceTree = "<group>"; };
 		ECBDD056059EB649921A6169A244B3C4 /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/Core/UIButton+WebCache.h"; sourceTree = "<group>"; };
@@ -848,7 +849,6 @@
 				E5BACD2ABFF94103A82F291FDC1E6202 /* Core */,
 				B76A2A4F1409116FDD41574EFAF4F535 /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -989,7 +989,6 @@
 				304D6CD55D589B62F9F3329898842A32 /* Wrappers.pbobjc.h */,
 				239FF8FD1610454D1F320C22D659B2D3 /* Support Files */,
 			);
-			name = Protobuf;
 			path = Protobuf;
 			sourceTree = "<group>";
 		};
@@ -1079,7 +1078,6 @@
 				1F3804BBA4DF39506F2630DA4E03DBD2 /* IQUIViewController+Additions.m */,
 				C2FACE9C655661204B44640C1B914EF8 /* Support Files */,
 			);
-			name = IQKeyboardManager;
 			path = IQKeyboardManager;
 			sourceTree = "<group>";
 		};
@@ -1129,7 +1127,6 @@
 				C5952A53CD64E8A832116D0E5ACD1387 /* SRWebSocket.m */,
 				47ACD4728A9A618972A7DF84661B32F7 /* Support Files */,
 			);
-			name = SocketRocket;
 			path = SocketRocket;
 			sourceTree = "<group>";
 		};
@@ -1215,7 +1212,6 @@
 				9B536096330A2E40B4D095631FDB1E12 /* VirtualBackground */,
 				7257A4FB819AE6488D8666F05C85C30A /* VQA */,
 			);
-			name = AgoraRtcEngine_iOS;
 			path = AgoraRtcEngine_iOS;
 			sourceTree = "<group>";
 		};
@@ -1282,7 +1278,6 @@
 				EFF61B26C4617BFCC77E1688551A94C3 /* NSString+MJExtension.m */,
 				07AF23E6235F9BCA33DDAEC25EB5957E /* Support Files */,
 			);
-			name = MJExtension;
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
@@ -2191,6 +2186,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;

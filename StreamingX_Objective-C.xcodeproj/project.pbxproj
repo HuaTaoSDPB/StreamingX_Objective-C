@@ -18,7 +18,6 @@
 		603A2D352A4153510037049A /* StreamingXRtcManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D342A4153510037049A /* StreamingXRtcManager.m */; };
 		603A2D5D2A4175910037049A /* Base.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D3B2A4175910037049A /* Base.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		603A2D5E2A4175910037049A /* ChannelIm.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D412A4175910037049A /* ChannelIm.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		603A2D5F2A4175910037049A /* ChannelBase.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D422A4175910037049A /* ChannelBase.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		603A2D602A4175910037049A /* Api.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D432A4175910037049A /* Api.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		603A2D612A4175910037049A /* Consts.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D452A4175910037049A /* Consts.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		603A2D622A4175910037049A /* HTTPError.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D462A4175910037049A /* HTTPError.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -39,6 +38,7 @@
 		603A2D7D2A41771F0037049A /* RtcVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A2D742A41771F0037049A /* RtcVideoViewController.m */; };
 		603A2D7E2A41771F0037049A /* RtcVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603A2D752A41771F0037049A /* RtcVideoViewController.xib */; };
 		603A2D7F2A41771F0037049A /* LookUpImagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603A2D762A41771F0037049A /* LookUpImagesViewController.xib */; };
+		60DD2DC32AA962CD00E47FE0 /* ChannelBase.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DD2DC22AA962CD00E47FE0 /* ChannelBase.pbobjc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,12 +61,10 @@
 		603A2D3A2A4175910037049A /* Consts.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.pbobjc.h; sourceTree = "<group>"; };
 		603A2D3B2A4175910037049A /* Base.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base.pbobjc.m; sourceTree = "<group>"; };
 		603A2D3C2A4175910037049A /* Api.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.pbobjc.h; sourceTree = "<group>"; };
-		603A2D3D2A4175910037049A /* ChannelBase.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelBase.pbobjc.h; sourceTree = "<group>"; };
 		603A2D3E2A4175910037049A /* HTTPError.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPError.pbobjc.h; sourceTree = "<group>"; };
 		603A2D3F2A4175910037049A /* ChannelImform.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelImform.pbobjc.h; sourceTree = "<group>"; };
 		603A2D402A4175910037049A /* Code.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.pbobjc.h; sourceTree = "<group>"; };
 		603A2D412A4175910037049A /* ChannelIm.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelIm.pbobjc.m; sourceTree = "<group>"; };
-		603A2D422A4175910037049A /* ChannelBase.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelBase.pbobjc.m; sourceTree = "<group>"; };
 		603A2D432A4175910037049A /* Api.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Api.pbobjc.m; sourceTree = "<group>"; };
 		603A2D442A4175910037049A /* Base.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base.pbobjc.h; sourceTree = "<group>"; };
 		603A2D452A4175910037049A /* Consts.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consts.pbobjc.m; sourceTree = "<group>"; };
@@ -101,6 +99,8 @@
 		603A2D752A41771F0037049A /* RtcVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RtcVideoViewController.xib; sourceTree = "<group>"; };
 		603A2D762A41771F0037049A /* LookUpImagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LookUpImagesViewController.xib; sourceTree = "<group>"; };
 		603A2D772A41771F0037049A /* RtcVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtcVideoViewController.h; sourceTree = "<group>"; };
+		60DD2DC12AA962CD00E47FE0 /* ChannelBase.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelBase.pbobjc.h; sourceTree = "<group>"; };
+		60DD2DC22AA962CD00E47FE0 /* ChannelBase.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelBase.pbobjc.m; sourceTree = "<group>"; };
 		79E552C1BFA40B2FBA3F5A41 /* Pods-StreamingX_Objective-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingX_Objective-C.release.xcconfig"; path = "Target Support Files/Pods-StreamingX_Objective-C/Pods-StreamingX_Objective-C.release.xcconfig"; sourceTree = "<group>"; };
 		BAE9C945B3DBD786546FDBD0 /* libPods-StreamingX_Objective-C.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StreamingX_Objective-C.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D86155A060D806452328EA /* Pods-StreamingX_Objective-C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingX_Objective-C.debug.xcconfig"; path = "Target Support Files/Pods-StreamingX_Objective-C/Pods-StreamingX_Objective-C.debug.xcconfig"; sourceTree = "<group>"; };
@@ -214,8 +214,8 @@
 				603A2D452A4175910037049A /* Consts.pbobjc.m */,
 				603A2D402A4175910037049A /* Code.pbobjc.h */,
 				603A2D482A4175910037049A /* Code.pbobjc.m */,
-				603A2D3D2A4175910037049A /* ChannelBase.pbobjc.h */,
-				603A2D422A4175910037049A /* ChannelBase.pbobjc.m */,
+				60DD2DC12AA962CD00E47FE0 /* ChannelBase.pbobjc.h */,
+				60DD2DC22AA962CD00E47FE0 /* ChannelBase.pbobjc.m */,
 				603A2D3F2A4175910037049A /* ChannelImform.pbobjc.h */,
 				603A2D492A4175910037049A /* ChannelImform.pbobjc.m */,
 				603A2D472A4175910037049A /* ChannelIm.pbobjc.h */,
@@ -346,7 +346,6 @@
 			files = (
 				603A2D782A41771F0037049A /* AnchListTableViewCell.m in Sources */,
 				603A2D5E2A4175910037049A /* ChannelIm.pbobjc.m in Sources */,
-				603A2D5F2A4175910037049A /* ChannelBase.pbobjc.m in Sources */,
 				603A2D212A4153370037049A /* ViewController.m in Sources */,
 				603A2D692A4175910037049A /* StreamingXRtcTool.m in Sources */,
 				603A2D1B2A4153370037049A /* AppDelegate.m in Sources */,
@@ -365,6 +364,7 @@
 				603A2D7D2A41771F0037049A /* RtcVideoViewController.m in Sources */,
 				603A2D792A41771F0037049A /* RtcVideoMsgTableViewCell.m in Sources */,
 				603A2D652A4175910037049A /* StreamingXResponse_RefreshTokenResult.m in Sources */,
+				60DD2DC32AA962CD00E47FE0 /* ChannelBase.pbobjc.m in Sources */,
 				603A2D602A4175910037049A /* Api.pbobjc.m in Sources */,
 				603A2D1E2A4153370037049A /* SceneDelegate.m in Sources */,
 				603A2D662A4175910037049A /* StreamingXResponse_AnchorList.m in Sources */,
@@ -513,6 +513,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 66RXMF6R9Q;
 				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "StreamingX_Objective-C/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

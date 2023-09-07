@@ -29,6 +29,7 @@ CF_EXTERN_C_BEGIN
 
 @class channel;
 @class channelUser;
+@class matchAttr;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -78,6 +79,81 @@ typedef GPB_ENUM(channelUserStateChange_FieldNumber) {
 @property(nonatomic, readwrite) BOOL hasChu;
 
 @property(nonatomic, readwrite) uint32_t reason;
+
+@end
+
+#pragma mark - channelMatched
+
+typedef GPB_ENUM(channelMatched_FieldNumber) {
+  channelMatched_FieldNumber_Ch = 1,
+  channelMatched_FieldNumber_Token = 2,
+  channelMatched_FieldNumber_SelfUniqId = 3,
+  channelMatched_FieldNumber_PeerUniqId = 4,
+  channelMatched_FieldNumber_MatchedUserAttr = 5,
+  channelMatched_FieldNumber_Ts = 6,
+};
+
+/**
+ * 匹配通知
+ **/
+@interface channelMatched : GPBMessage
+
+/** 频道信息 */
+@property(nonatomic, readwrite, strong, null_resettable) channel *ch;
+/** Test to see if @c ch has been set. */
+@property(nonatomic, readwrite) BOOL hasCh;
+
+/** 频道token */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
+
+/** 进入频道时使用的唯一Id */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *selfUniqId;
+
+/** 对方进入频道时使用的唯一Id */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *peerUniqId;
+
+/** 对方的匹配熟悉 */
+@property(nonatomic, readwrite, strong, null_resettable) matchAttr *matchedUserAttr;
+/** Test to see if @c matchedUserAttr has been set. */
+@property(nonatomic, readwrite) BOOL hasMatchedUserAttr;
+
+/** 本次匹配对应的ts */
+@property(nonatomic, readwrite) int64_t ts;
+
+@end
+
+#pragma mark - channelSkipped
+
+typedef GPB_ENUM(channelSkipped_FieldNumber) {
+  channelSkipped_FieldNumber_ChannelId = 1,
+};
+
+/**
+ * 跳过通知
+ **/
+@interface channelSkipped : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *channelId;
+
+@end
+
+#pragma mark - matchAttr
+
+typedef GPB_ENUM(matchAttr_FieldNumber) {
+  matchAttr_FieldNumber_Name = 1,
+  matchAttr_FieldNumber_PhotoURL = 2,
+  matchAttr_FieldNumber_Gender = 3,
+};
+
+@interface matchAttr : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+
+/** 头像URL */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *photoURL;
+
+/** 1. 男 2.女 */
+@property(nonatomic, readwrite) uint32_t gender;
 
 @end
 

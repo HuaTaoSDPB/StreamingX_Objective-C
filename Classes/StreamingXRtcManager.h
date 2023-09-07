@@ -27,6 +27,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^streamingXRtcManagerReceiveUserStateChangedBlock)(channelUserStateChange *stateChangeModel);
 /// 离线通知
 @property (nonatomic, copy) void (^streamingXRtcManagerReceiveOfflineBlock)(NSInteger uid, AgoraUserOfflineReason reason);
+/// 匹配通知
+@property (nonatomic, copy) void (^streamingXRtcManagerReceiveMatchResultBlock)(channelMatched *matcheModel);
+/// 匹配对方跳过通知
+@property (nonatomic, copy) void (^streamingXRtcManagerReceiveMatchSkipBlock)(channelSkipped *matchSkipModel);
 /// 是否打印日志，默认为FALSE
 @property (nonatomic, assign) BOOL streamingXIsLog;
 /// 日志信息 streamingXIsLog 为 TRUE 时，会调用(由于sdk比较简单，且为了减少本地储存空间占用，日志不会存储，如果需要，请自行存储)
@@ -106,6 +110,34 @@ NS_ASSUME_NONNULL_BEGIN
 /// 离开房间
 /// @param leaveChannelBlock 回调
 + (void)streamingX_leaveRtcChannel:(void(^ _Nullable)(AgoraChannelStats * _Nonnull stat))leaveChannelBlock;
+
+/// 匹配请求
+/// @param countryCode 国家码
+/// @param language 语言简码
+/// @param matchGender 匹配希望的性别
+/// @param name 自己的名字
+/// @param photoUrl 自己的头像地址
+/// @param gender 自己的性别
+/// @param matchType 匹配类型1. 手动触发 2.被动触发
+/// @param block 成功回调
+/// @param errorBlock 失败回调
++ (void)streamingX_matchRequestWithCountryCode:(NSString *)countryCode
+                                      language:(NSString *)language
+                                   matchGender:(NSInteger)matchGender
+                                          name:(NSString *)name
+                                      photoUrl:(NSString *)photoUrl
+                                        gender:(NSInteger)gender
+                                     matchType:(NSInteger)matchType
+                                         block:(void(^)(void))block
+                                    errorBlock:(void(^)(NSError * error))errorBlock;
+
+/// 跳过匹配
+/// @param matchId 匹配Id
+/// @param block 成功回调
+/// @param errorBlock 失败回调
++ (void)streamingX_skipMatchRequestWithMatchId:(NSString *)matchId
+                                         block:(void(^)(void))block
+                                    errorBlock:(void(^)(NSError * error))errorBlock;
 
 @end
 

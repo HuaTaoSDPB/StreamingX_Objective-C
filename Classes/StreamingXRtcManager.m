@@ -24,6 +24,8 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
 @property (nonatomic, strong) SRWebSocket * streamingXWebSocket;
 /// 心跳计时器
 @property (nonatomic, strong) NSTimer * streamingXHeartTimer;
+/// 心跳发送时间（未收到回执）
+@property (nonatomic, assign) NSInteger streamingXHeartSendDate;
 /// 频道ID
 @property (nonatomic, copy) NSString * streamingXChannelId;
 /// Wss是否秘钥验证成功
@@ -167,6 +169,23 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
 #pragma mark - 收发消息
 
 - (void)streamingXSendPing {
+    if (self.streamingXHeartSendDate > 0) {
+        //发心跳时间大于两次心跳间隔，判断为掉线了
+        if ([NSDate new].timeIntervalSince1970 - self.streamingXHeartSendDate >= WSS_HEART_TIME*2) {
+            if (self.streamingXIsLog) {
+                NSLog(@"StreamingX log : WebSocket closed reason:心跳超时两次，已关闭");
+                if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+                    self.streamingXRtcManagerReceiveLogMsgBlock((@"StreamingX log : WebSocket closed reason:心跳超时两次，已关闭"), nil);
+                }
+            }
+            self.streamingXWebSocket.delegate = nil;
+            [self.streamingXWebSocket close];
+            self.streamingXWebSocket = nil;
+            return;
+        }
+    }else {
+        self.streamingXHeartSendDate = [NSDate new].timeIntervalSince1970;
+    }
     ping * pingModel = [ping new];
     pingModel.channelId = self.streamingXChannelId;
     messageFrame * msgModel = [messageFrame new];
@@ -249,6 +268,7 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
             break;
             //心跳回执
         case crcPong:
+            self.streamingXHeartSendDate = 0;
             if (!self.streamingXIsConnectSuccess) {
                 self.streamingXIsConnectSuccess = YES;
                 if (self.streamingXRtcManagerInitResultBlock) {
@@ -342,6 +362,34 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
                 NSLog(@"StreamingX log : 用户状态变更 %@",@(model.chu.state));
                 if (self.streamingXRtcManagerReceiveLogMsgBlock) {
                     self.streamingXRtcManagerReceiveLogMsgBlock([NSString stringWithFormat:@"StreamingX log : 用户状态变更 %@",@(model.chu.state)], nil);
+                }
+            }
+        }
+            break;
+        case crcChannelMatched:
+        {
+            channelMatched * model = [channelMatched parseFromData:receiveData.data_p error:nil];
+            if (self.streamingXRtcManagerReceiveMatchResultBlock) {
+                self.streamingXRtcManagerReceiveMatchResultBlock(model);
+            }
+            if (self.streamingXIsLog) {
+                NSLog(@"StreamingX log : 收到匹配通知 名字：%@",model.matchedUserAttr.name);
+                if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+                    self.streamingXRtcManagerReceiveLogMsgBlock([NSString stringWithFormat:@"StreamingX log : 收到匹配通知 名字：%@",model.matchedUserAttr.name], nil);
+                }
+            }
+        }
+            break;
+        case crcChannelSkipped:
+        {
+            channelSkipped * model = [channelSkipped parseFromData:receiveData.data_p error:nil];
+            if (self.streamingXRtcManagerReceiveMatchSkipBlock) {
+                self.streamingXRtcManagerReceiveMatchSkipBlock(model);
+            }
+            if (self.streamingXIsLog) {
+                NSLog(@"StreamingX log : 收到匹配跳过通知 频道id：%@",model.channelId);
+                if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+                    self.streamingXRtcManagerReceiveLogMsgBlock([NSString stringWithFormat:@"StreamingX log : 收到匹配跳过通知 频道id：%@",model.channelId], nil);
                 }
             }
         }
@@ -498,6 +546,81 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
 + (void)streamingX_leaveRtcChannel:(void(^ _Nullable)(AgoraChannelStats * _Nonnull stat))leaveChannelBlock {
     [StreamingXRtcManager shareStreamingXRtcManager].streamingXChannelId = nil;
     [[StreamingXRtcManager shareStreamingXRtcManager].agorartcManager streamingX_leaveRtcChannel:leaveChannelBlock];
+}
+
+/// 匹配请求
+/// @param countryCode 国家码，可为nil
+/// @param language 语言简码，可为nil
+/// @param matchGender 匹配希望的性别 0. all 1. 男 2.女
+/// @param name 自己的名字
+/// @param photoUrl 自己的头像地址，可为nil
+/// @param gender 自己的性别
+/// @param matchType 匹配类型1. 手动触发 2.被动触发
+/// @param block 成功回调
+/// @param errorBlock 失败回调
++ (void)streamingX_matchRequestWithCountryCode:(NSString *)countryCode
+                                      language:(NSString *)language
+                                   matchGender:(NSInteger)matchGender
+                                          name:(NSString *)name
+                                      photoUrl:(NSString *)photoUrl
+                                        gender:(NSInteger)gender
+                                     matchType:(NSInteger)matchType
+                                         block:(void(^)(void))block
+                                    errorBlock:(void(^)(NSError * error))errorBlock {
+    if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsConnectSuccess) {
+        NSMutableDictionary * dictionary = [NSMutableDictionary dictionaryWithCapacity:4];
+        NSMutableDictionary * expectDictionary = [NSMutableDictionary dictionaryWithCapacity:0];
+        if (countryCode) {
+            [expectDictionary setObject:countryCode forKey:@"country"];
+        }
+        if (language) {
+            [expectDictionary setObject:language forKey:@"language"];
+        }
+        [expectDictionary setObject:countryCode forKey:@"gender"];
+        NSMutableDictionary * attrDictionary = [NSMutableDictionary dictionaryWithCapacity:0];
+        if (name) {
+            [attrDictionary setObject:name forKey:@"name"];
+        }
+        if (photoUrl) {
+            [attrDictionary setObject:photoUrl forKey:@"photoUrl"];
+        }
+        [attrDictionary setObject:gender==1?@(1):@(2) forKey:@"gender"];
+        [dictionary setObject:expectDictionary forKey:@"expect"];
+        [dictionary setObject:attrDictionary forKey:@"attr"];
+        [dictionary setObject:@((NSInteger)([NSDate.new timeIntervalSince1970]*1000)) forKey:@"ts"];
+        [dictionary setObject:@(matchType==1?1:2) forKey:@"matchType"];
+        [StreamingXHttpManager streamingX_matchRequestWithDictionaryData:dictionary block:block errorBlock:errorBlock httpHeader:[StreamingXRtcTool streamingX_getEncodeHeaderWithAccess_key_secret:[StreamingXRtcManager shareStreamingXRtcManager].access_key_secret access_key_id:[StreamingXRtcManager shareStreamingXRtcManager].access_key_id access_key_token:[StreamingXRtcManager shareStreamingXRtcManager].access_key_token]];
+    }else {
+        NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:400 userInfo:@{NSLocalizedDescriptionKey:@"请初始化成功后再调用",NSLocalizedFailureReasonErrorKey:@"请初始化成功后再调用"}];
+        errorBlock(error);
+        if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsLog) {
+            NSLog(@"请初始化成功后再调用");
+            if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock) {
+                [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock(@"请初始化成功后再调用", error);
+            }
+        }
+    }
+}
+
+/// 跳过匹配
+/// @param matchId 匹配Id
+/// @param block 成功回调
+/// @param errorBlock 失败回调
++ (void)streamingX_skipMatchRequestWithMatchId:(NSString *)matchId
+                                         block:(void(^)(void))block
+                                    errorBlock:(void(^)(NSError * error))errorBlock {
+    if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsConnectSuccess) {
+        [StreamingXHttpManager streamingX_skipMatchRequestWithBlock:block errorBlock:errorBlock httpHeader:[StreamingXRtcTool streamingX_getEncodeHeaderWithAccess_key_secret:[StreamingXRtcManager shareStreamingXRtcManager].access_key_secret access_key_id:[StreamingXRtcManager shareStreamingXRtcManager].access_key_id access_key_token:[StreamingXRtcManager shareStreamingXRtcManager].access_key_token]];
+    }else {
+        NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:400 userInfo:@{NSLocalizedDescriptionKey:@"请初始化成功后再调用",NSLocalizedFailureReasonErrorKey:@"请初始化成功后再调用"}];
+        errorBlock(error);
+        if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsLog) {
+            NSLog(@"请初始化成功后再调用");
+            if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock) {
+                [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock(@"请初始化成功后再调用", error);
+            }
+        }
+    }
 }
 
 @end
