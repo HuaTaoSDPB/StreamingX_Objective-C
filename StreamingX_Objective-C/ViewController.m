@@ -33,6 +33,11 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"AnchListTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"AnchListTableViewCell"];
+    
+    self.accessKeyId = @"84849b48da8f11ed97a904d9f5ac3e12";
+    self.accessKeySecret = @"t3rUAwLO4DyZOgyg80zMTkROL0_dD_oO0b!wohkL";
+    self.sessionToken = @"765576567";
+    self.expiredAt = @"1111111111";
 }
 
 #pragma mark - 初始化sdk
@@ -198,7 +203,7 @@
     AnchListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"AnchListTableViewCell"];
     [cell.headerImageV sd_setImageWithURL:[NSURL URLWithString:anchM.defaultAvatar.avatarStandard]];
     cell.nameLabel.text = anchM.name;
-    cell.yearoldLabel.text = anchM.birthday;
+    cell.yearoldLabel.text = [NSString stringWithFormat:@"%@",@(anchM.birthday)];
     cell.stateView.backgroundColor = anchM.state == 0 ? [UIColor lightGrayColor] : anchM.state == 1 ? [UIColor greenColor] : [UIColor orangeColor];
 //    cell.backgroundColor = anchM.currentChannel.length > 0 ? [UIColor yellowColor] : [UIColor clearColor];
     [cell setCallButtonClickBlock:^{
@@ -218,6 +223,18 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.anchList.array.count;
+}
+
+#pragma mark - 查看主播信息
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    StreamingXResponse_Anchor * anchM = self.anchList.array[indexPath.row];
+    [self addTextToTextView:@"开始获取主播信息"];
+    [StreamingXRtcManager streamingX_getAnchorInfoWithUid:anchM.uid block:^(StreamingXResponse_Anchor * _Nonnull responseModel) {
+        [self addTextToTextView:@"获取主播信息成功"];
+    } errorBlock:^(NSError * _Nonnull error) {
+        [self addTextToTextView:@"获取主播信息失败"];
+    }];
 }
 
 #pragma mark - 打电话(申请进入频道)

@@ -26,6 +26,16 @@ NS_ASSUME_NONNULL_BEGIN
                                errorBlock:(void(^)(NSError * error))errorBlock
                                httpHeader:(NSDictionary *)httpHeader;
 
+/// 获取主播个人信息
+/// @param uid  主播ID
+/// @param block 成功回调
+/// @param errorBlock 失败回调
+/// @param httpHeader 请求头信息
++ (void)streamingX_getAnchorInfoWithUid:(NSInteger)uid
+                                   block:(void(^)(StreamingXResponse_Anchor * responseModel))block
+                               errorBlock:(void(^)(NSError * error))errorBlock
+                             httpHeader:(NSDictionary *)httpHeader;
+
 /// 获取主播头像数组
 /// @param anchorId 主播ID
 /// @param block 成功回调

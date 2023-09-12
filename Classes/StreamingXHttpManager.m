@@ -11,6 +11,7 @@
 #define StreamingX_refreshTokenUrl @"/channel/channel/%@/token"
 #define StreamingX_requstMatchUrl @"/channel/channel/match"
 #define StreamingX_requstSkipMatchUrl @"/channel/channel/match/skip"
+#define StreamingX_getAnchorInfoUrl @"/broadcaster/broadcaster"
 
 #import "StreamingXHttpManager.h"
 #import <MJExtension/MJExtension.h>
@@ -34,7 +35,7 @@
         StreamingXResponse_AnchorList * responseModel = [StreamingXResponse_AnchorList new];
         NSMutableArray * arr = [NSMutableArray array];
         NSArray * userList = dataDictionary[@"list"];
-        NSDictionary * defaultAvatarMap = dataDictionary[@"defaultAvatarMap"];
+        NSDictionary * defaultAvatarMap = dataDictionary[@"defaultCoverMap"];
         NSDictionary * currentChannelMap = dataDictionary[@"currentChannel"];
         NSDictionary * stateMap = dataDictionary[@"stateMap"];
         for (NSInteger i = 0; i < userList.count; i ++) {
@@ -50,6 +51,23 @@
             }
         }
         responseModel.array = arr;
+        block(responseModel);
+    } errorBlock:^(NSError *error) {
+        errorBlock(error);
+    }];
+}
+
+/// 获取主播个人信息
+/// @param uid  主播ID
+/// @param block 成功回调
+/// @param errorBlock 失败回调
+/// @param httpHeader 请求头信息
++ (void)streamingX_getAnchorInfoWithUid:(NSInteger)uid
+                                   block:(void(^)(StreamingXResponse_Anchor * responseModel))block
+                               errorBlock:(void(^)(NSError * error))errorBlock
+                              httpHeader:(NSDictionary *)httpHeader {
+    [self streamingX_requestWithType:@"GET" dictionary:nil url:[NSString stringWithFormat:@"%@/%@/uid",StreamingX_getAnchorInfoUrl,@(uid)] httpHeader:httpHeader block:^(NSDictionary *dataDictionary) {
+        StreamingXResponse_Anchor * responseModel = [StreamingXResponse_Anchor mj_objectWithKeyValues:dataDictionary];
         block(responseModel);
     } errorBlock:^(NSError *error) {
         errorBlock(error);

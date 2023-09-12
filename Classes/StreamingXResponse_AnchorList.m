@@ -9,6 +9,13 @@
 
 @implementation StreamingXResponse_Anchor
 
+- (NSString *)name {
+    if (_nick) {
+        return _nick;
+    }
+    return _name;
+}
+
 @end
 
 @implementation StreamingXResponse_AnchorList

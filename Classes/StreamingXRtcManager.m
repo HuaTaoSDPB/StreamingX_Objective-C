@@ -109,7 +109,8 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
 + (StreamingXRtcManager *)initStreamingXRtcManagerWithAccess_key_secret:(NSString *)access_key_secret
                                         access_key_id:(NSString *)access_key_id
                                      access_key_token:(NSString *)access_key_token {
-        
+    [StreamingXRtcManager shareStreamingXRtcManager].streamingXIsConnectSuccess = false;
+    [StreamingXRtcManager shareStreamingXRtcManager].streamingXHeartSendDate = 0;
     [StreamingXRtcManager shareStreamingXRtcManager].access_key_secret = access_key_secret;
     [StreamingXRtcManager shareStreamingXRtcManager].access_key_id = access_key_id;
     [StreamingXRtcManager shareStreamingXRtcManager].access_key_token = access_key_token;
@@ -248,22 +249,28 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
             //验证失败
         case crcError:
         {
-            WssError * model = [WssError parseFromData:receiveData.data_p error:nil];
-            if (model.code == 401) {
-                self.streamingXIsConnectSuccess = NO;
-                if (self.streamingXRtcManagerInitResultBlock) {
-                    NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:401 userInfo:@{NSLocalizedDescriptionKey:model.message,NSLocalizedFailureReasonErrorKey:model.message}];
-                    self.streamingXRtcManagerInitResultBlock(NO, error);
-                    if (self.streamingXIsLog) {
-                        NSLog(@"StreamingX log : 秘钥验证失败");
-                        if (self.streamingXRtcManagerReceiveLogMsgBlock) {
-                            self.streamingXRtcManagerReceiveLogMsgBlock(@"StreamingX log : 秘钥验证失败", error);
-                        }
-                    }
+            if (self.streamingXIsLog) {
+                NSLog(@"StreamingX log : 秘钥验证失败");
+                if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+                    self.streamingXRtcManagerReceiveLogMsgBlock(@"StreamingX log : 秘钥验证失败", nil);
                 }
-            }else {
-                // to do
             }
+//            WssError * model = [WssError parseFromData:receiveData.data_p error:nil];
+//            if (model.code == 401) {
+//                self.streamingXIsConnectSuccess = NO;
+//                if (self.streamingXRtcManagerInitResultBlock) {
+//                    NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:401 userInfo:@{NSLocalizedDescriptionKey:model.message,NSLocalizedFailureReasonErrorKey:model.message}];
+//                    self.streamingXRtcManagerInitResultBlock(NO, error);
+//                    if (self.streamingXIsLog) {
+//                        NSLog(@"StreamingX log : 秘钥验证失败");
+//                        if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+//                            self.streamingXRtcManagerReceiveLogMsgBlock(@"StreamingX log : 秘钥验证失败", error);
+//                        }
+//                    }
+//                }
+//            }else {
+//                // to do
+//            }
         }
             break;
             //心跳回执
@@ -426,6 +433,27 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
     }
 }
 
+/// 获取主播个人信息
+/// @param uid uid
+/// @param block 成功回调
+/// @param errorBlock 失败回调
++ (void)streamingX_getAnchorInfoWithUid:(NSInteger)uid
+                                   block:(void(^)(StreamingXResponse_Anchor * responseModel))block
+                             errorBlock:(void(^)(NSError * error))errorBlock {
+    if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsConnectSuccess) {
+        [StreamingXHttpManager streamingX_getAnchorInfoWithUid:uid block:block errorBlock:errorBlock httpHeader:[StreamingXRtcTool streamingX_getEncodeHeaderWithAccess_key_secret:[StreamingXRtcManager shareStreamingXRtcManager].access_key_secret access_key_id:[StreamingXRtcManager shareStreamingXRtcManager].access_key_id access_key_token:[StreamingXRtcManager shareStreamingXRtcManager].access_key_token]];
+    }else {
+        NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:400 userInfo:@{NSLocalizedDescriptionKey:@"请初始化成功后再调用",NSLocalizedFailureReasonErrorKey:@"请初始化成功后再调用"}];
+        errorBlock(error);
+        if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXIsLog) {
+            NSLog(@"请初始化成功后再调用");
+            if ([StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock) {
+                [StreamingXRtcManager shareStreamingXRtcManager].streamingXRtcManagerReceiveLogMsgBlock(@"请初始化成功后再调用", error);
+            }
+        }
+    }
+}
+
 /// 获取主播头像数组
 /// @param anchorId 主播ID
 /// @param block 成功回调
@@ -576,7 +604,7 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
         if (language) {
             [expectDictionary setObject:language forKey:@"language"];
         }
-        [expectDictionary setObject:countryCode forKey:@"gender"];
+        [expectDictionary setObject:@(matchGender) forKey:@"gender"];
         NSMutableDictionary * attrDictionary = [NSMutableDictionary dictionaryWithCapacity:0];
         if (name) {
             [attrDictionary setObject:name forKey:@"name"];
