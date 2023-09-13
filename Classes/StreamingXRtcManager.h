@@ -67,6 +67,14 @@ NS_ASSUME_NONNULL_BEGIN
                                    block:(void(^)(StreamingXResponse_Anchor * responseModel))block
                               errorBlock:(void(^)(NSError * error))errorBlock;
 
+/// 获取主播实时状态
+/// @param uid uid
+/// @param block 成功回调
+/// @param errorBlock 失败回调
++ (void)streamingX_getAnchorStateWithUid:(NSInteger)uid
+                                   block:(void(^)(StreamingXResponse_AnchorState * responseModel))block
+                              errorBlock:(void(^)(NSError * error))errorBlock;
+
 /// 获取主播头像数组
 /// @param anchorId 主播ID
 /// @param block 成功回调

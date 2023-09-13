@@ -11,6 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface StreamingXResponse_AnchorState : NSObject
+/// 主播状态: 0.离线 1.在线空闲 2.在线忙碌 3.在线但不可用
+@property (nonatomic, assign) StreamingX_AnchorState state;
+/// 主播目前处在的频道
+@property (nonatomic, copy) NSString * channelId;
+@end
+
 @interface StreamingXResponse_Anchor : NSObject
 /// 主播id
 @property (nonatomic, assign) NSInteger uid;

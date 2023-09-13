@@ -7,6 +7,10 @@
 
 #import "StreamingXResponse_AnchorList.h"
 
+@implementation StreamingXResponse_AnchorState
+
+@end
+
 @implementation StreamingXResponse_Anchor
 
 - (NSString *)name {

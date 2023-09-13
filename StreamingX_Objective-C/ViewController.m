@@ -235,6 +235,12 @@
     } errorBlock:^(NSError * _Nonnull error) {
         [self addTextToTextView:@"获取主播信息失败"];
     }];
+    
+    [StreamingXRtcManager streamingX_getAnchorStateWithUid:anchM.uid block:^(StreamingXResponse_AnchorState * _Nonnull responseModel) {
+        
+    } errorBlock:^(NSError * _Nonnull error) {
+        
+    }];
 }
 
 #pragma mark - 打电话(申请进入频道)

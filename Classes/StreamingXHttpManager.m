@@ -12,6 +12,7 @@
 #define StreamingX_requstMatchUrl @"/channel/channel/match"
 #define StreamingX_requstSkipMatchUrl @"/channel/channel/match/skip"
 #define StreamingX_getAnchorInfoUrl @"/broadcaster/broadcaster"
+#define StreamingX_getAnchorStateUrl @"/broadcaster/broadcaster"
 
 #import "StreamingXHttpManager.h"
 #import <MJExtension/MJExtension.h>
@@ -68,6 +69,23 @@
                               httpHeader:(NSDictionary *)httpHeader {
     [self streamingX_requestWithType:@"GET" dictionary:nil url:[NSString stringWithFormat:@"%@/%@/uid",StreamingX_getAnchorInfoUrl,@(uid)] httpHeader:httpHeader block:^(NSDictionary *dataDictionary) {
         StreamingXResponse_Anchor * responseModel = [StreamingXResponse_Anchor mj_objectWithKeyValues:dataDictionary];
+        block(responseModel);
+    } errorBlock:^(NSError *error) {
+        errorBlock(error);
+    }];
+}
+
+/// 获取主播实时状态
+/// @param uid  主播ID
+/// @param block 成功回调
+/// @param errorBlock 失败回调
+/// @param httpHeader 请求头信息
++ (void)streamingX_getAnchorStateWithUid:(NSInteger)uid
+                                   block:(void(^)(StreamingXResponse_AnchorState * responseModel))block
+                               errorBlock:(void(^)(NSError * error))errorBlock
+                              httpHeader:(NSDictionary *)httpHeader {
+    [self streamingX_requestWithType:@"GET" dictionary:nil url:[NSString stringWithFormat:@"%@/%@/state",StreamingX_getAnchorInfoUrl,@(uid)] httpHeader:httpHeader block:^(NSDictionary *dataDictionary) {
+        StreamingXResponse_AnchorState * responseModel = [StreamingXResponse_AnchorState mj_objectWithKeyValues:dataDictionary];
         block(responseModel);
     } errorBlock:^(NSError *error) {
         errorBlock(error);
