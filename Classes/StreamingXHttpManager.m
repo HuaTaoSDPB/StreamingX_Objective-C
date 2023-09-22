@@ -13,6 +13,7 @@
 #define StreamingX_requstSkipMatchUrl @"/channel/channel/match/skip"
 #define StreamingX_getAnchorInfoUrl @"/broadcaster/broadcaster"
 #define StreamingX_getAnchorStateUrl @"/broadcaster/broadcaster"
+#define StreamingX_getSingleFreeAnchorUrl @"/broadcaster/broadcaster/free/one"
 
 #import "StreamingXHttpManager.h"
 #import <MJExtension/MJExtension.h>
@@ -156,6 +157,33 @@
     }];
 }
 
+/// 获取单个空闲主播
+/// @param block 成功回调
+/// @param errorBlock 失败回调
+/// @param httpHeader 请求头信息
++ (void)streamingX_getSingleOnlineFreeAnchorRequestWithBlock:(void(^)(StreamingXResponse_Anchor * responseModel))block
+                                                  errorBlock:(void(^)(NSError * error))errorBlock
+                                                  httpHeader:(NSDictionary *)httpHeader {
+    [self streamingX_requestWithType:@"GET" dictionary:nil url:StreamingX_getSingleFreeAnchorUrl httpHeader:httpHeader block:^(NSDictionary *dataDictionary) {
+        NSArray * list = dataDictionary[@"list"];
+        if (list.count > 0) {
+            StreamingXResponse_Anchor * responseModel = [StreamingXResponse_Anchor mj_objectWithKeyValues:list[0]];
+            NSDictionary * dic = dataDictionary[@"defaultCoverMap"];
+            if (dic) {
+                if (dic.allValues.count > 0) {
+                    NSDictionary * dicc = dic.allValues[0];
+                    responseModel.defaultAvatar = [StreamingXResponse_AnchorAvatar mj_objectWithKeyValues:dicc];
+                }
+            }
+            block(responseModel);
+        }else {
+            block(nil);
+        }
+    } errorBlock:^(NSError *error) {
+        errorBlock(error);
+    }];
+}
+
 /// 网络请求
 /// @param type 请求类型
 /// @param dictionary 请求体
@@ -192,7 +220,12 @@
           NSError *parseError = nil;
           NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
            dispatch_async(dispatch_get_main_queue(), ^{
-               block(responseDictionary);
+               if ([responseDictionary[@"code"] integerValue] == 0) {
+                   block(responseDictionary);
+               }else {
+                   NSError * error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:[responseDictionary[@"code"] integerValue] userInfo:@{NSLocalizedDescriptionKey:responseDictionary[@"message"]?responseDictionary[@"message"]:@"error",NSLocalizedFailureReasonErrorKey:responseDictionary[@"message"]?responseDictionary[@"message"]:@"error"}];
+                   errorBlock(error);
+               }
            });
           dispatch_semaphore_signal(sema);
        }

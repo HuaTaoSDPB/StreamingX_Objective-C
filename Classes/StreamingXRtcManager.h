@@ -155,6 +155,12 @@ NS_ASSUME_NONNULL_BEGIN
                                          block:(void(^)(void))block
                                     errorBlock:(void(^)(NSError * error))errorBlock;
 
+/// 获取单个空闲主播
+/// @param block 成功回调
+/// @param errorBlock 失败回调
++ (void)streamingX_getSingleOnlineFreeAnchorRequestWithBlock:(void(^)(StreamingXResponse_Anchor * responseModel))block
+                                                  errorBlock:(void(^)(NSError * error))errorBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

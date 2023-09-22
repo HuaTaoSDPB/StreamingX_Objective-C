@@ -23,12 +23,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger uid;
 /// 主播名字
 @property (nonatomic, copy) NSString * name;
-/// 主播名字 (请勿用此字段)
+/// 主播名字 (兼容服务端，请勿用此字段)
 @property (nonatomic, copy) NSString * nick;
 /// 主播生日sssss
 @property (nonatomic, assign) NSInteger birthday;
-/// 主播状态: 0.离线 1.在线空闲 2.在线忙碌 3.在线但不可用
-@property (nonatomic, assign) StreamingX_AnchorState state;
+/// 主播认证状态 0.主播未审核 1.主播 2.被封禁 3.注销
+@property (nonatomic, assign) StreamingX_AnchorAccountState state;
 /// 主播默认头像
 @property (nonatomic, strong) StreamingXResponse_AnchorAvatar * defaultAvatar;
 /// 主播目前处在的频道

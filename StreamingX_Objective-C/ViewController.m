@@ -241,6 +241,12 @@
     } errorBlock:^(NSError * _Nonnull error) {
         
     }];
+    
+    [StreamingXRtcManager streamingX_getSingleOnlineFreeAnchorRequestWithBlock:^(StreamingXResponse_Anchor * _Nonnull responseModel) {
+        
+    } errorBlock:^(NSError * _Nonnull error) {
+        
+    }];
 }
 
 #pragma mark - 打电话(申请进入频道)

@@ -84,6 +84,14 @@ NS_ASSUME_NONNULL_BEGIN
                                        errorBlock:(void(^)(NSError * error))errorBlock
                                        httpHeader:(NSDictionary *)httpHeader;
 
+/// 获取单个空闲主播
+/// @param block 成功回调
+/// @param errorBlock 失败回调
+/// @param httpHeader 请求头信息
++ (void)streamingX_getSingleOnlineFreeAnchorRequestWithBlock:(void(^)(StreamingXResponse_Anchor * responseModel))block
+                                       errorBlock:(void(^)(NSError * error))errorBlock
+                                       httpHeader:(NSDictionary *)httpHeader;
+
 @end
 
 NS_ASSUME_NONNULL_END

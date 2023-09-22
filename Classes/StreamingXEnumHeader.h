@@ -16,6 +16,14 @@ typedef NS_ENUM(NSUInteger, StreamingX_AnchorState) {
     StreamingX_AnchorOnlineButCannotUseState
 };
 
+/// 0 主播未审核 1主播 2被封禁 3注销
+typedef NS_ENUM(NSUInteger, StreamingX_AnchorAccountState) {
+    StreamingX_AnchorAccountUnauditedState = 0,
+    StreamingX_AnchorAccountNormalState,
+    StreamingX_AnchorAccountBannedState,
+    StreamingX_AnchorAccountLoggedOutState
+};
+
 /// 频道状态 0.未知 1.空闲 2.繁忙 3.已关闭 999.余额不足
 typedef NS_ENUM(NSUInteger, StreamingX_ChannelState) {
     StreamingX_ChannelUnknownState = 0,
