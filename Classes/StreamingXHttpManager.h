@@ -26,6 +26,20 @@ NS_ASSUME_NONNULL_BEGIN
                                errorBlock:(void(^)(NSError * error))errorBlock
                                httpHeader:(NSDictionary *)httpHeader;
 
+/// 获取活跃主播列表
+/// @param sort 排序 0.时间倒序 1.分数倒序
+/// @param page 从第0页开始分页
+/// @param limit 分页限制字段，默认10，最多50
+/// @param block 成功回调
+/// @param errorBlock 失败回调
+/// @param httpHeader 请求头信息
++ (void)streamingX_getActiveAnchorListWithSort:(NSInteger)sort
+                                    page:(NSInteger)page
+                                    limit:(NSInteger)limit
+                                   block:(void(^)(StreamingXResponse_AnchorList * responseModel))block
+                               errorBlock:(void(^)(NSError * error))errorBlock
+                               httpHeader:(NSDictionary *)httpHeader;
+
 /// 获取主播个人信息
 /// @param uid  主播ID
 /// @param block 成功回调

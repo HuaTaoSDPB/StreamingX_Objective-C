@@ -14,6 +14,7 @@
 #define StreamingX_getAnchorInfoUrl @"/broadcaster/broadcaster"
 #define StreamingX_getAnchorStateUrl @"/broadcaster/broadcaster"
 #define StreamingX_getSingleFreeAnchorUrl @"/broadcaster/broadcaster/free/one"
+#define StreamingX_getActiveAnchorListUrl @"/broadcaster/broadcaster/active/list"
 
 #import "StreamingXHttpManager.h"
 #import <MJExtension/MJExtension.h>
@@ -34,6 +35,45 @@
                                errorBlock:(void(^)(NSError * error))errorBlock
                               httpHeader:(NSDictionary *)httpHeader {
     [self streamingX_requestWithType:@"GET" dictionary:nil url:[NSString stringWithFormat:@"%@?sort=%@&page=%@&limit=%@",StreamingX_getAnchorListUrl,@(sort),@(page),@(limit)] httpHeader:httpHeader block:^(NSDictionary *dataDictionary) {
+        StreamingXResponse_AnchorList * responseModel = [StreamingXResponse_AnchorList new];
+        NSMutableArray * arr = [NSMutableArray array];
+        NSArray * userList = dataDictionary[@"list"];
+        NSDictionary * defaultAvatarMap = dataDictionary[@"defaultCoverMap"];
+        NSDictionary * currentChannelMap = dataDictionary[@"currentChannel"];
+        NSDictionary * stateMap = dataDictionary[@"stateMap"];
+        for (NSInteger i = 0; i < userList.count; i ++) {
+            NSDictionary * userDic = userList[i];
+            StreamingXResponse_Anchor * model = [StreamingXResponse_Anchor mj_objectWithKeyValues:userDic];
+            if (model) {
+                NSDictionary * defaultAvatarDic = defaultAvatarMap[[NSString stringWithFormat:@"%@",@(model.uid)]];
+                StreamingXResponse_AnchorAvatar * defaultAvatarModel = [StreamingXResponse_AnchorAvatar mj_objectWithKeyValues:defaultAvatarDic];
+                model.defaultAvatar = defaultAvatarModel;
+                model.currentChannel = currentChannelMap[[NSString stringWithFormat:@"%@",@(model.uid)]];
+                model.state = [stateMap[[NSString stringWithFormat:@"%@",@(model.uid)]] integerValue];
+                [arr addObject:model];
+            }
+        }
+        responseModel.array = arr;
+        block(responseModel);
+    } errorBlock:^(NSError *error) {
+        errorBlock(error);
+    }];
+}
+
+/// 获取活跃主播列表
+/// @param sort 排序 0.时间倒序 1.分数倒序
+/// @param page 从第0页开始分页
+/// @param limit 分页限制字段，默认10，最多50
+/// @param block 成功回调
+/// @param errorBlock 失败回调
+/// @param httpHeader 请求头信息
++ (void)streamingX_getActiveAnchorListWithSort:(NSInteger)sort
+                                    page:(NSInteger)page
+                                    limit:(NSInteger)limit
+                                   block:(void(^)(StreamingXResponse_AnchorList * responseModel))block
+                               errorBlock:(void(^)(NSError * error))errorBlock
+                                    httpHeader:(NSDictionary *)httpHeader {
+    [self streamingX_requestWithType:@"GET" dictionary:nil url:[NSString stringWithFormat:@"%@?sort=%@&page=%@&limit=%@",StreamingX_getActiveAnchorListUrl,@(sort),@(page),@(limit)] httpHeader:httpHeader block:^(NSDictionary *dataDictionary) {
         StreamingXResponse_AnchorList * responseModel = [StreamingXResponse_AnchorList new];
         NSMutableArray * arr = [NSMutableArray array];
         NSArray * userList = dataDictionary[@"list"];
