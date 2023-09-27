@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 主播名字 (兼容服务端，请勿用此字段)
 @property (nonatomic, copy) NSString * nick;
 /// 主播生日sssss
-@property (nonatomic, assign) NSInteger birthday;
+@property (nonatomic, assign) NSInteger birthDay;
 /// 主播认证状态 0.主播未审核 1.主播 2.被封禁 3.注销
 @property (nonatomic, assign) StreamingX_AnchorAccountState state;
 /// 主播默认头像

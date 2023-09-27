@@ -170,23 +170,23 @@ typedef void(^StreamingXRtcManagerSendMessageAckBlock)(channelMsgRecord * msg, c
 #pragma mark - 收发消息
 
 - (void)streamingXSendPing {
-    if (self.streamingXHeartSendDate > 0) {
-        //发心跳时间大于两次心跳间隔，判断为掉线了
-        if ([NSDate new].timeIntervalSince1970 - self.streamingXHeartSendDate >= WSS_HEART_TIME*2) {
-            if (self.streamingXIsLog) {
-                NSLog(@"StreamingX log : WebSocket closed reason:心跳超时两次，已关闭");
-                if (self.streamingXRtcManagerReceiveLogMsgBlock) {
-                    self.streamingXRtcManagerReceiveLogMsgBlock((@"StreamingX log : WebSocket closed reason:心跳超时两次，已关闭"), nil);
-                }
-            }
-            self.streamingXWebSocket.delegate = nil;
-            [self.streamingXWebSocket close];
-            self.streamingXWebSocket = nil;
-            return;
-        }
-    }else {
-        self.streamingXHeartSendDate = [NSDate new].timeIntervalSince1970;
-    }
+//    if (self.streamingXHeartSendDate > 0) {
+//        //发心跳时间大于两次心跳间隔，判断为掉线了
+//        if ([NSDate new].timeIntervalSince1970 - self.streamingXHeartSendDate >= WSS_HEART_TIME*2) {
+//            if (self.streamingXIsLog) {
+//                NSLog(@"StreamingX log : WebSocket closed reason:心跳超时两次，已关闭");
+//                if (self.streamingXRtcManagerReceiveLogMsgBlock) {
+//                    self.streamingXRtcManagerReceiveLogMsgBlock((@"StreamingX log : WebSocket closed reason:心跳超时两次，已关闭"), nil);
+//                }
+//            }
+//            self.streamingXWebSocket.delegate = nil;
+//            [self.streamingXWebSocket close];
+//            self.streamingXWebSocket = nil;
+//            return;
+//        }
+//    }else {
+//        self.streamingXHeartSendDate = [NSDate new].timeIntervalSince1970;
+//    }
     ping * pingModel = [ping new];
     pingModel.channelId = self.streamingXChannelId;
     messageFrame * msgModel = [messageFrame new];

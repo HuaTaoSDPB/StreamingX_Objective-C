@@ -203,7 +203,7 @@
     AnchListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"AnchListTableViewCell"];
     [cell.headerImageV sd_setImageWithURL:[NSURL URLWithString:anchM.defaultAvatar.avatarStandard]];
     cell.nameLabel.text = anchM.name;
-    cell.yearoldLabel.text = [NSString stringWithFormat:@"%@",@(anchM.birthday)];
+    cell.yearoldLabel.text = [NSString stringWithFormat:@"%@",@(anchM.birthDay)];
     cell.stateView.backgroundColor = anchM.state == 0 ? [UIColor lightGrayColor] : anchM.state == 1 ? [UIColor greenColor] : [UIColor orangeColor];
 //    cell.backgroundColor = anchM.currentChannel.length > 0 ? [UIColor yellowColor] : [UIColor clearColor];
     [cell setCallButtonClickBlock:^{

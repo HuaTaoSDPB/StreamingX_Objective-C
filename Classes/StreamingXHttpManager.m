@@ -14,7 +14,7 @@
 #define StreamingX_getAnchorInfoUrl @"/broadcaster/broadcaster"
 #define StreamingX_getAnchorStateUrl @"/broadcaster/broadcaster"
 #define StreamingX_getSingleFreeAnchorUrl @"/broadcaster/broadcaster/free/one"
-#define StreamingX_getActiveAnchorListUrl @"/broadcaster/broadcaster/active/list"
+#define StreamingX_getActiveAnchorListUrl @"/broadcaster/broadcaster/active"
 
 #import "StreamingXHttpManager.h"
 #import <MJExtension/MJExtension.h>

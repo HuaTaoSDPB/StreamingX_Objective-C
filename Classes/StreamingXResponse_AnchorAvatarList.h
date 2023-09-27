@@ -18,6 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString * avatarStandard;
 /// 主播清晰头像
 @property (nonatomic, copy) NSString * avatarClear;
+/// 主播模糊头像（小头像）(勿用，适配服务器)
+@property (nonatomic, copy) NSString * thumb;
+/// 主播标准头像 (勿用，适配服务器)
+@property (nonatomic, copy) NSString * standard;
+/// 主播清晰头像 (勿用，适配服务器)
+@property (nonatomic, copy) NSString * clear;
 @end
 
 @interface StreamingXResponse_AnchorAvatarList : NSObject
