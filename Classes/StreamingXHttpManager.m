@@ -160,7 +160,8 @@
                                   errorBlock:(void(^)(NSError * error))errorBlock
                                   httpHeader:(NSDictionary *)httpHeader {
     [self streamingX_requestWithType:@"GET" dictionary:nil url:[NSString stringWithFormat:StreamingX_refreshTokenUrl,channelId] httpHeader:httpHeader block:^(NSDictionary *dataDictionary) {
-        block(nil);
+        StreamingXResponse_RefreshTokenResult * responseModel = [StreamingXResponse_RefreshTokenResult mj_objectWithKeyValues:dataDictionary];
+        block(responseModel);
     } errorBlock:^(NSError *error) {
         errorBlock(error);
     }];
