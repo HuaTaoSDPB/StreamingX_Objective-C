@@ -5,7 +5,7 @@
 //  Created by sportmoment on 2023/6/12.
 //
 
-#define WSS_URL @"wss://api.hitradegate.com/v1/ws"
+#define WSS_URL @"wss://api.streamingxapp.com/v1/ws"
 #define WSS_HEART_TIME 5
 
 #import "StreamingXRtcManager.h"

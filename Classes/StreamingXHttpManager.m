@@ -5,7 +5,7 @@
 //  Created by sportmoment on 2023/6/12.
 //
 
-#define StreamingX_baseUrl @"https://api.hitradegate.com/v1"
+#define StreamingX_baseUrl @"https://api.streamingxapp.com/v1"
 #define StreamingX_getAnchorListUrl @"/broadcaster/broadcaster"
 #define StreamingX_getAnchorAvatarsUrl @"/broadcaster/broadcaster/%@/avatar"
 #define StreamingX_refreshTokenUrl @"/channel/channel/%@/token"

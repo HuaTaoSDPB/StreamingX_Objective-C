@@ -6,7 +6,7 @@
 //
 
 #import "StreamingXAgoraRtcEngineManager.h"
-#define AgoraRtcID @"d204e16e727048b08a1d8e1ae10bb238"
+#define AgoraRtcID @"50b9eccdb721455b849a88b375d64e34"
 #import "StreamingXRtcManager.h"
 
 @interface StreamingXAgoraRtcEngineManager () <AgoraRtcEngineDelegate>

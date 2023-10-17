@@ -4,7 +4,7 @@
 </p>
 基于声网rtc的私有服务。
 
-官网：[http://streamingX.com](http://streamingX.com)
+官网：[https://console.streamingxapp.com](https://console.streamingxapp.com)
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT "Feel free to contribute.")
 
@@ -12,7 +12,7 @@
 
 使用CocoaPods安装：
 ```ruby
-pod 'StreamingX_Objective-C', '~> 1.0.0'
+pod 'StreamingX_Objective-C', '~> 1.1.0'
 ```
 
 初始化SDK（请注意秘钥的过期时间，请在过期前重新获取秘钥并初始化SDK）：
