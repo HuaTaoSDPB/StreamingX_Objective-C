@@ -9,7 +9,7 @@
 #define WSS_HEART_TIME 5
 
 #import "StreamingXRtcManager.h"
-#import <SRWebSocket.h>
+#import "SRWebSocket.h"
 #import "StreamingXRtcTool.h"
 
 typedef void(^StreamingXRtcManagerGetMessageListBlock)(getDiffChannelMsgRecordAck * responseModel);

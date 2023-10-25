@@ -49,7 +49,7 @@
                 StreamingXResponse_AnchorAvatar * defaultAvatarModel = [StreamingXResponse_AnchorAvatar mj_objectWithKeyValues:defaultAvatarDic];
                 model.defaultAvatar = defaultAvatarModel;
                 model.currentChannel = currentChannelMap[[NSString stringWithFormat:@"%@",@(model.uid)]];
-                model.state = [stateMap[[NSString stringWithFormat:@"%@",@(model.uid)]] integerValue];
+                model.onlineState = [stateMap[[NSString stringWithFormat:@"%@",@(model.uid)]] integerValue];
                 [arr addObject:model];
             }
         }
@@ -88,7 +88,7 @@
                 StreamingXResponse_AnchorAvatar * defaultAvatarModel = [StreamingXResponse_AnchorAvatar mj_objectWithKeyValues:defaultAvatarDic];
                 model.defaultAvatar = defaultAvatarModel;
                 model.currentChannel = currentChannelMap[[NSString stringWithFormat:@"%@",@(model.uid)]];
-                model.state = [stateMap[[NSString stringWithFormat:@"%@",@(model.uid)]] integerValue];
+                model.onlineState = [stateMap[[NSString stringWithFormat:@"%@",@(model.uid)]] integerValue];
                 [arr addObject:model];
             }
         }
